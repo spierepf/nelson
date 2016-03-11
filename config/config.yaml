@@ -1,0 +1,21 @@
+#config_version=3
+
+config:
+    - hardware.yaml
+    - switches.yaml
+    - coils.yaml
+    - devices.yaml
+    - dmd.yaml
+    - targets.yaml
+    - lights.yaml
+    - shots.yaml
+
+modes:
+    - base
+
+fonts:
+    weltron:
+        file: WELTRON2.TTF
+
+scriptlets:
+    bumper_counter.BumperCounter

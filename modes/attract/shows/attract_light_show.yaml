@@ -1,0 +1,118 @@
+#config_version=3
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_0: 0
+    l_popBumper_bottom_1: 00ff00
+    l_popBumper_right_0: 000066
+    l_upperLane_1: ff00ff
+    l_upperLane_2: 0
+    l_upperLane_3: 0
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_1: 0
+    l_popBumper_bottom_2: 00ff00
+    l_popBumper_right_0: 3333ff
+    l_popBumper_right_1: 000066
+    l_popBumper_right_11: 000066
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_2: 0
+    l_popBumper_bottom_3: 00ff00
+    l_popBumper_right_0: 000066
+    l_popBumper_right_1: 3333ff
+    l_popBumper_right_11: 3333ff
+    l_popBumper_right_2: 000066
+    l_popBumper_right_10: 000066
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_3: 0
+    l_popBumper_bottom_4: 00ff00
+    l_popBumper_right_0: 0
+    l_popBumper_right_1: 000066
+    l_popBumper_right_11: 000066
+    l_popBumper_right_2: 3333ff
+    l_popBumper_right_10: 3333ff
+    l_popBumper_right_3: 000066
+    l_popBumper_right_9: 000066
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_4: 0
+    l_popBumper_bottom_5: 00ff00
+    l_popBumper_right_1: 0
+    l_popBumper_right_11: 0
+    l_popBumper_right_2: 000066
+    l_popBumper_right_10: 000066
+    l_popBumper_right_3: 3333ff
+    l_popBumper_right_9: 3333ff
+    l_popBumper_right_4: 000066
+    l_popBumper_right_8: 000066
+    l_upperLane_1: 0
+    l_upperLane_2: ff00ff
+    l_upperLane_3: 0
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_5: 0
+    l_popBumper_bottom_6: 00ff00
+    l_popBumper_right_2: 0
+    l_popBumper_right_10: 0
+    l_popBumper_right_3: 000066
+    l_popBumper_right_9: 000066
+    l_popBumper_right_4: 3333ff
+    l_popBumper_right_8: 3333ff
+    l_popBumper_right_5: 000066
+    l_popBumper_right_7: 000066
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_6: 0
+    l_popBumper_bottom_7: 00ff00
+    l_popBumper_right_3: 0
+    l_popBumper_right_9: 0
+    l_popBumper_right_4: 000066
+    l_popBumper_right_8: 000066
+    l_popBumper_right_5: 3333ff
+    l_popBumper_right_7: 3333ff
+    l_popBumper_right_6: 000066
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_7: 0
+    l_popBumper_bottom_8: 00ff00
+    l_popBumper_right_4: 0
+    l_popBumper_right_8: 0
+    l_popBumper_right_5: 000066
+    l_popBumper_right_7: 000066
+    l_popBumper_right_6: 3333ff
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_8: 0
+    l_popBumper_bottom_9: 00ff00
+    l_popBumper_right_5: 0
+    l_popBumper_right_7: 0
+    l_popBumper_right_6: 000066
+    l_upperLane_1: 0
+    l_upperLane_2: 0
+    l_upperLane_3: ff00ff
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_9: 0
+    l_popBumper_bottom_10: 00ff00
+    l_popBumper_right_6: 0
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_10: 0
+    l_popBumper_bottom_11: 00ff00
+
+- tocks: 1
+  leds:
+    l_popBumper_bottom_11: 0
+    l_popBumper_bottom_0: 00ff00

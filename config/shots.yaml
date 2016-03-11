@@ -1,0 +1,16 @@
+#config_version=3
+
+shots:
+    upperLane_1:
+        switch: s_upperLane_1
+        led: l_upperLane_1
+    upperLane_2:
+        switch: s_upperLane_2
+        led: l_upperLane_2
+    upperLane_3:
+        switch: s_upperLane_3
+        led: l_upperLane_3
+
+shot_groups:
+    upperLanes:
+        shots: upperLane_1, upperLane_2, upperLane_3

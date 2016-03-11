@@ -1,0 +1,83 @@
+#config_version=3
+
+leds:
+    l_popBumper_bottom_0:
+        number: 0
+
+    l_popBumper_bottom_1:
+        number: 1
+
+    l_popBumper_bottom_2:
+        number: 2
+
+    l_popBumper_bottom_3:
+        number: 3
+
+    l_popBumper_bottom_4:
+        number: 4
+
+    l_popBumper_bottom_5:
+        number: 5
+
+    l_popBumper_bottom_6:
+        number: 6
+
+    l_popBumper_bottom_7:
+        number: 7
+
+    l_popBumper_bottom_8:
+        number: 8
+
+    l_popBumper_bottom_9:
+        number: 9
+
+    l_popBumper_bottom_10:
+        number: 10
+
+    l_popBumper_bottom_11:
+        number: 11
+
+    l_popBumper_right_0:
+        number: 12
+
+    l_popBumper_right_1:
+        number: 13
+
+    l_popBumper_right_2:
+        number: 14
+
+    l_popBumper_right_3:
+        number: 15
+
+    l_popBumper_right_4:
+        number: 16
+
+    l_popBumper_right_5:
+        number: 17
+
+    l_popBumper_right_6:
+        number: 18
+
+    l_popBumper_right_7:
+        number: 19
+
+    l_popBumper_right_8:
+        number: 20
+
+    l_popBumper_right_9:
+        number: 21
+
+    l_popBumper_right_10:
+        number: 22
+
+    l_popBumper_right_11:
+        number: 23
+
+    l_upperLane_1:
+        number: 64
+
+    l_upperLane_2:
+        number: 65
+
+    l_upperLane_3:
+        number: 66

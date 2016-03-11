@@ -1,0 +1,50 @@
+#config_version=3
+
+drop_targets:
+    dropTarget_left_1:
+        switch: s_dropTarget_left_1
+
+    dropTarget_left_2:
+        switch: s_dropTarget_left_2
+
+    dropTarget_left_3:
+        switch: s_dropTarget_left_3
+
+    dropTarget_right_1:
+        switch: s_dropTarget_right_1
+
+    dropTarget_right_2:
+        switch: s_dropTarget_right_2
+
+    dropTarget_right_3:
+        switch: s_dropTarget_right_3
+
+    dropTarget_centre_1:
+        switch: s_dropTarget_centre_1
+
+    dropTarget_centre_2:
+        switch: s_dropTarget_centre_2
+
+    dropTarget_centre_3:
+        switch: s_dropTarget_centre_3
+    
+drop_target_banks:
+    dropTargetBank_left:
+        drop_targets: dropTarget_left_1, dropTarget_left_2, dropTarget_left_3
+        reset_coils: c_dropTarget_left_reset
+        reset_events:
+            ball_starting: 0
+            dropTargetBank_left_down: 1s
+
+    dropTargetBank_right:
+        drop_targets: dropTarget_right_1, dropTarget_right_2, dropTarget_right_3
+        reset_coils: c_dropTarget_right_reset
+        reset_events:
+            ball_starting: 0
+            dropTargetBank_right_down: 1s
+
+    dropTargetBank_centre:
+        drop_targets: dropTarget_centre_1, dropTarget_centre_2, dropTarget_centre_3
+        reset_coils: c_dropTarget_centre_reset
+        reset_events:
+            ball_starting: 0

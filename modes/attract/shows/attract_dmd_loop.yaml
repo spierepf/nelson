@@ -1,0 +1,110 @@
+- tocks: 4
+  display:
+  - type: Movie
+    movie: outputScaled
+    repeat: True
+
+- tocks: 3
+  display:
+    - type: image
+      image: hms
+      h_pos: left
+    - type: text
+      text: '&'
+    - type: image
+      image: halcon
+      h_pos: right
+      transition:
+        type: move_out
+        duration: 1s
+        direction: top
+
+- tocks: 3
+  display:
+    - type: text
+      text: PROUDLY PRESENT
+      transition:
+        type: move_out
+        duration: 1s
+        direction: left
+
+- tocks: 3
+  display:
+    - type: text
+      text: Nelson
+      font: weltron
+      size: 25
+      transition:
+        type: move_out
+        duration: 1s
+        direction: left
+
+- tocks: 3
+  display:
+    - type: text
+      text: SPECIAL THANKS TO
+      transition:
+        type: move_out
+        duration: 1s
+        direction: left
+
+- tocks: 3
+  display:
+    - type: image
+      image: nscad
+      transition:
+        type: move_out
+        duration: 1s
+        direction: top
+
+- tocks: 3
+  display:
+    - type: image
+      image: great_pinball
+      transition:
+        type: move_out
+        duration: 1s
+        direction: top
+
+- tocks: 3
+  display:
+    - type: Text
+      text: PRESS START
+      decorators:
+        type: blink
+        repeats: -1
+        on_secs: .5
+        off_secs: .5
+    - type: Text
+      text: FREE PLAY
+      color: 00ff00
+      v_pos: bottom
+      font: small
+      transition:
+        type: move_in
+        duration: 1s
+        direction: right
+
+- tocks: 3
+  display:
+    - type: Text
+      text: SAY NO TO SLURM
+      color: ff0000
+      transition:
+        type: move_in
+        duration: 1s
+        direction: top
+    - type: shape
+      shape: box
+      width: 128
+      height: 32
+
+- tocks: 5
+  display:
+    - type: image
+      image: qr_code
+      transition:
+        type: move_out
+        duration: 1s
+        direction: top
+ 

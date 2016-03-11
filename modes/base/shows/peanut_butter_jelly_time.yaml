@@ -1,0 +1,5 @@
+- tocks: 4
+  display:
+  - type: Movie
+    movie: pbj
+    repeat: True

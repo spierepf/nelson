@@ -1,0 +1,75 @@
+#config_version=3
+
+flippers:
+    flipper_left:
+        main_coil: c_flipper_left
+        activation_switch: s_flipper_left
+        enable_events: machine_reset_phase_3
+
+    flipper_right:
+        main_coil: c_flipper_right
+        activation_switch: s_flipper_right
+        enable_events: machine_reset_phase_3
+
+ball_devices:
+    drain:
+        ball_switches: s_drain
+        eject_coil: c_drain_eject
+        entrance_count_delay: 300ms
+        confirm_eject_type: target
+        eject_targets: trough
+        tags: drain
+
+    trough:
+        ball_switches: s_trough1, s_trough2, s_trough3
+        eject_coil: c_trough_eject
+        entrance_count_delay: 300ms
+        confirm_eject_type: target
+        eject_targets: plungerLane
+        tags: home, trough
+
+    plungerLane:
+        ball_switches: s_plungerLane
+        entrance_count_delay: 300ms
+        mechanical_eject: true
+        tags: ball_add_live
+
+    kickOut_left:
+        ball_switches: s_kickOut_left
+        eject_coil: c_kickOut_left_eject
+        entrance_count_delay: 300ms
+        exit_count_delay: 3s
+        tags: ball_add_live
+
+    kickOut_right:
+        ball_switches: s_kickOut_right
+        eject_coil: c_kickOut_right_eject
+        entrance_count_delay: 300ms
+        exit_count_delay: 3s
+        tags: ball_add_live
+        
+autofire_coils:
+    slingshot_right:
+        coil: c_slingshot_right
+        switch: s_slingshot_right
+        enable_events: machine_reset_phase_3
+
+    slingshot_left:
+        coil: c_slingshot_left
+        switch: s_slingshot_left
+        enable_events: machine_reset_phase_3
+
+    popBumper_left:
+        coil: c_popBumper_left
+        switch: s_popBumper_left
+        enable_events: machine_reset_phase_3
+
+    popBumper_right:
+        coil: c_popBumper_right
+        switch: s_popBumper_right
+        enable_events: machine_reset_phase_3
+
+    popBumper_bottom:
+        coil: c_popBumper_bottom
+        switch: s_popBumper_bottom
+        enable_events: machine_reset_phase_3

@@ -1,0 +1,112 @@
+#config_version=3
+mode:
+    start_events: ball_starting
+    priority: 100
+
+scoring:
+    ball_started:
+        score: 100
+    s_spinner_active:
+        score: 25
+    s_spinner_inactive:
+        score: 25
+    s_popBumper_left_active:
+        score: 10
+    s_popBumper_right_active:
+        score: 10
+    s_popBumper_bottom_active:
+        score: 10
+    s_slingshot_right_active:
+        score: 25
+    s_slingshot_left_active:
+        score: 25
+    dropTarget_left_1_down:
+        score: 500
+    dropTarget_left_2_down:
+        score: 500
+    dropTarget_left_3_down:
+        score: 500
+    dropTarget_centre_1_down:
+        score: 500
+    dropTarget_centre_2_down:
+        score: 500
+    dropTarget_centre_3_down:
+        score: 500
+    dropTarget_right_1_down:
+        score: 500
+    dropTarget_right_2_down:
+        score: 500
+    dropTarget_right_3_down:
+        score: 500
+    dropTargetBank_left_down:
+        score: 5000
+    dropTargetBank_centre_down:
+        score: 5000
+    dropTargetBank_right_down:
+        score: 5000
+    s_lane_upper_1_active:
+        score: 50
+    s_lane_upper_2_active:
+        score: 50
+    s_lane_upper_3_active:
+        score: 50
+    s_fixedTarget_post_inline_active:
+        score: 10000
+    s_rubberSwitch_side_active:
+        score: 10
+    s_rubberSwitch_bottom_active:
+        score: 10
+
+slide_player:
+  mode_base_started:
+    - type: text
+      text: "%score%"
+      number_grouping: true
+      min_digits: 2
+      v_pos: center
+      transition:
+          type: move_in
+    - type: text
+      text: PLAYER %number%
+      v_pos: bottom
+      h_pos: left
+      font: small
+    - type: text
+      text: BALL %ball%
+      v_pos: bottom
+      h_pos: right
+      font: small
+
+sound_player:
+    outlane:
+        start_events: s_outlane_left_active s_outlane_right_active
+        sound: fail
+        volume: 1.0
+    anvil_drop:
+        start_events: s_kickOut_left_active s_kickOut_right_active
+        sound: Anvil Drop
+        volume: 1.0
+    fixedTarget_post_inline_sound:
+        start_events: s_fixedTarget_post_inline_active
+        sound: peanut-butter
+        volume: 1.0
+    cute-swish:
+        start_events: s_lane_upper_1_active s_lane_upper_2_active s_lane_upper_3_active
+        sound: cute-swish
+        volume: 1.0
+    spinner:
+        start_events: s_spinner_active
+        sound: nelson-spinner
+        volume: 1.0
+
+show_player:
+    s_fixedTarget_post_inline_active:
+      - show: peanut_butter_jelly_time
+        tocks_per_sec: 1
+
+shot_groups:
+    upperLanes:
+        rotate_left_events: s_flipper_left_active
+        rotate_right_events: s_flipper_right_active
+        reset_events:
+            upperLanes_default_lit_complete: 1s

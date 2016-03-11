@@ -1,0 +1,28 @@
+#config_version=3
+
+hardware:
+    platform: kingpyn_platform
+    dmd: smartmatrix
+    leds: fadecandy
+
+sound_system:
+    tracks:
+        voice:
+            volume: 1
+            priority: 2
+            simultaneous_sounds: 1
+            preload: yes
+        sfx:
+            volume: 1
+            priority: 1
+            preload: yes
+            simultaneous_sounds: 7
+    stream:
+        name: music
+        priority: 0
+
+    buffer: 512
+    frequency: 44100
+    channels: 1
+    initial_volume: 1
+    volume_steps: 20
