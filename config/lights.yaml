@@ -73,6 +73,42 @@ leds:
     l_popBumper_right_11:
         number: 23
 
+    l_popBumper_three_0:
+        number: 24
+
+    l_popBumper_three_0:
+        number: 25
+
+    l_popBumper_three_0:
+        number: 26
+
+    l_popBumper_three_0:
+        number: 27
+
+    l_popBumper_three_0:
+        number: 28
+
+    l_popBumper_three_0:
+        number: 29
+
+    l_popBumper_three_0:
+        number: 30
+
+    l_popBumper_three_0:
+        number: 31
+
+    l_popBumper_three_0:
+        number: 32
+
+    l_popBumper_three_0:
+        number: 33
+
+    l_popBumper_three_0:
+        number: 34
+
+    l_popBumper_three_0:
+        number: 35
+
     l_upperLane_1:
         number: 64
 

@@ -12,28 +12,55 @@ dmd:
     type: color
 
 window:
+    width: 600
+    height: 200
+    title: Mission Pinball Framework - Nelson
+    resizable: yes
+    frame: yes
+    fullscreen: no
+    fps: auto
+    quit_on_close: True
     elements:
-      - type: virtualdmd
-        width: 512
-        height: 128
-        h_pos: center
-        v_pos: center
-        pixel_color: ff6600
-        dark_color: 220000
-        pixel_spacing: 1
-      - type: shape
-        shape: box
-        width: 516
-        height: 132
-        color: aaaaaa
-        thickness: 2
-      - type: text
-        font: tall title
-        text: NELSON
-        h_pos: center
-        v_pos: top
-        y: 60
-        size: 100
-        antialias: yes
-        layer: 1
-        color: ee9900
+
+    - type: VirtualDMD
+      width: 512
+      height: 128
+      h_pos: center
+      v_pos: center
+      pixel_color: ff5500
+      dark_color: 220000
+      layer: 1
+      pixel_spacing: 2
+
+    - type: Text
+      font: tall title
+      text: MISSION PINBALL FRAMEWORK
+      h_pos: center
+      v_pos: top
+      y: 3
+      size: 30
+      antialias: yes
+      layer: 1
+      color: ffffff
+
+    - type: Shape
+      shape: box
+      width: 514
+      height: 130
+      layer: 2
+      thickness: 2
+      v_pos: center
+      h_pos: center
+      color: 444444
+
+    - type: Text
+      font: tall title
+      text: NELSON
+      h_pos: right
+      v_pos: bottom
+      y: -3
+      x: -42
+      size: 30
+      antialias: yes
+      layer: 1
+      color: ff0000
