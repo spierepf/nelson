@@ -4,7 +4,8 @@ mode:
   start_events: ball_starting
   stop_events: mode_selected
   priority: 100
-
+  code: carousel.Carousel
+  
 slide_player:
   cosplay_highlighted:
     - type: text
