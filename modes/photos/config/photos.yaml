@@ -3,3 +3,8 @@
 mode:
   start_events: photos_selected
   priority: 100
+
+show_player:
+    s_fixedTarget_post_inline_active:
+      - show: peanut_butter_jelly_time
+        tocks_per_sec: 1

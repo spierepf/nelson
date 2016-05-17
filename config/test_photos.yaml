@@ -31,3 +31,15 @@ switch_player:
     - time: 1s
       switch: s_plungerLane
       action: deactivate
+    - time: 1s
+      switch: s_dropTarget_centre_1
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_centre_2
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_centre_3
+      action: activate
+    - time: 1s
+      switch: s_fixedTarget_post_inline
+      action: hit

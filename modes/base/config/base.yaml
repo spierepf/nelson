@@ -99,11 +99,6 @@ sound_player:
         sound: nelson-spinner
         volume: 1.0
 
-show_player:
-    s_fixedTarget_post_inline_active:
-      - show: peanut_butter_jelly_time
-        tocks_per_sec: 1
-
 shot_groups:
     upperLanes:
         rotate_left_events: s_flipper_left_active
