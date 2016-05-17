@@ -9,9 +9,7 @@ config:
     - targets.yaml
     - lights.yaml
     - shots.yaml
-
-modes:
-    - base
+    - modes.yaml
 
 fonts:
     weltron:
@@ -19,6 +17,7 @@ fonts:
 
 scriptlets:
     bumper_counter.BumperCounter
+    mode_carousel.ModeCarousel
 
 bcp:
     connections:
