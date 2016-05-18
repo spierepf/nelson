@@ -12,3 +12,9 @@ logic_blocks:
       events:
         - dropTargetBank_right_down
         - balldevice_kickout_right_ball_enter
+
+slide_player:
+  dropTargetBank_right_down:
+    - type: text
+      text: "NOW GO FOR THE KICKOUT!"
+      expire: 3s

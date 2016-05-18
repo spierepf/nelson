@@ -22,5 +22,5 @@ slide_player:
       expire: 2s
   logicblock_achieve_multiball_complete:
     - type: text
-      text: "ITS PARTY TIME!"
+      text: "IT'S PARTY TIME!"
       expire: 2s
