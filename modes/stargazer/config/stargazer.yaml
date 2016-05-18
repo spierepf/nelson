@@ -3,3 +3,24 @@
 mode:
   start_events: stargazer_selected
   priority: 100
+
+logic_blocks:
+  accruals:
+    light_multiball:
+      enable_events: mode_stargazer_started
+      events:
+        - ball_lock_balllock_left_full
+        - ball_lock_balllock_right_full
+    achieve_multiball:
+      enable_events: logicblock_light_multiball_complete
+      events: s_spinner_active
+
+slide_player:
+  logicblock_light_multiball_complete:
+    - type: text
+      text: "SPIN THE DISCO BALL!"
+      expire: 2s
+  logicblock_achieve_multiball_complete:
+    - type: text
+      text: "ITS PARTY TIME!"
+      expire: 2s

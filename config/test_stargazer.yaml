@@ -10,11 +10,17 @@ switch_player:
     - time: 100ms
       switch: s_trough1
       action: activate
+    - time: 100ms
+      switch: s_trough2
+      action: activate
+    - time: 100ms
+      switch: s_trough3
+      action: activate
     - time: 600ms
       switch: s_start
       action: hit
     - time: 100ms
-      switch: s_trough1
+      switch: s_trough3
       action: deactivate
     - time: 100ms
       switch: s_plungerLane
@@ -37,3 +43,30 @@ switch_player:
     - time: 1s
       switch: s_plungerLane
       action: deactivate
+    - time: 1s
+      switch: s_kickOut_left
+      action: activate
+    - time: 1s
+      switch: s_trough2
+      action: deactivate
+    - time: 100ms
+      switch: s_plungerLane
+      action: activate
+    - time: 1s
+      switch: s_plungerLane
+      action: deactivate
+    - time: 1s
+      switch: s_kickOut_right
+      action: activate
+    - time: 1s
+      switch: s_trough1
+      action: deactivate
+    - time: 100ms
+      switch: s_plungerLane
+      action: activate
+    - time: 1s
+      switch: s_plungerLane
+      action: deactivate
+    - time: 1s
+      switch: s_spinner
+      action: hit
