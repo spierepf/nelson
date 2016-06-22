@@ -17,14 +17,14 @@ def find_leds(prefix):
 def wheel(wheelPos):
     wheelPos = 255/255 - (wheelPos % 1);
     if wheelPos < 85/255:
-        return (255/255 - wheelPos * 3, 0, wheelPos * 3);
+        return (round((255/255 - wheelPos * 3) * 255), 0, round((wheelPos * 3) * 255));
 
     if wheelPos < 170/255:
         wheelPos -= 85/255;
-        return (0, wheelPos * 3, 255/255 - wheelPos * 3);
+        return (0, round((wheelPos * 3) * 255), round((255/255 - wheelPos * 3) * 255));
 
     wheelPos -= 170/255;
-    return (wheelPos * 3, 255/255 - wheelPos * 3, 0);
+    return (round((wheelPos * 3) * 255), round((255/255 - wheelPos * 3) * 255), 0);
 
 
 def rainbow(length):
@@ -64,7 +64,7 @@ def write_show(name, show):
     with open('shows/'+name+'.yaml', 'w') as outfile:
         outfile.write(yaml.dump(show))
 
-write_show("popBumper_three_chase_red", gen_show(find_leds("l_popBumper_three"), [(1,0,0), (0,0,0), (0,0,0)]))
+write_show("popBumper_three_chase_red", gen_show(find_leds("l_popBumper_three"), [(255,0,0), (0,0,0), (0,0,0)]))
 
 write_show("popBumper_three_chase_rainbow", gen_show(find_leds("l_popBumper_three"), rainbow(len(find_leds("l_popBumper_three")))))
 
