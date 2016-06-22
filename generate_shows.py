@@ -1,6 +1,7 @@
 from __future__ import division
 import yaml
 import collections
+import math
 
 """
  * The color white.  In the default sRGB space.
@@ -149,9 +150,9 @@ def brighter(color, factor=0.7):
  * @since      JDK1.0
 """
 def darker(color, factor = 0.7):
-    return (max(round(color[0]*FACTOR), 0),
-            max(round(color[1]*FACTOR), 0),
-            max(round(color[2]*FACTOR), 0))
+    return (max(round(color[0]*factor), 0),
+            max(round(color[1]*factor), 0),
+            max(round(color[2]*factor), 0))
 
 def blend(color1, factor, color2):
     contrib1 = darker(color1, factor)
@@ -161,11 +162,17 @@ def blend(color1, factor, color2):
             min(contrib1[2]+contrib2[2], 255))
 
 def rainbow(length):
-    retval = [];
+    retval = []
     for i in range(length):
         retval.append(wheel(i/length))
-    return retval;
+    return retval
 
+def wave(color, length):
+	retval = []
+	for i in range(length):
+		retval.append(darker(color, (1 + math.cos(2*math.pi * i / length)) / 2))
+	return retval
+		
 def replicate(pattern, count):
     retval = []
     for item in pattern:
@@ -173,11 +180,14 @@ def replicate(pattern, count):
             retval.append(item)
     return retval;
 
+def to_hex(color):
+    return ''.join('{:02x}'.format(int(x)) for x in color)
+    
 def gen_frame(leds, pattern):
     items = {}
     i = 0
     for led in leds:
-        items[led] = pattern[i]
+        items[led] = to_hex(pattern[i])
         i = (i + 1) % len(pattern)
     frame = {}
     frame["tocks"] = 1
@@ -197,9 +207,10 @@ def write_show(name, show):
     with open('shows/'+name+'.yaml', 'w') as outfile:
         outfile.write(yaml.dump(show))
 
-write_show("popBumper_three_chase_red", gen_show(find_leds("l_popBumper_three"), [RED, BLACK, BLACK]))
+write_show("vendor_bottom_chase_red", gen_show(find_leds("l_vendor_bottom"), [RED, BLACK, BLACK]))
 
-write_show("popBumper_three_chase_rainbow", gen_show(find_leds("l_popBumper_three"), rainbow(len(find_leds("l_popBumper_three")))))
+write_show("vendor_bottom_chase_rainbow", gen_show(find_leds("l_vendor_bottom"), rainbow(len(find_leds("l_vendor_bottom")))))
 
-write_show("popBumper_three_fade_rainbow", gen_show(find_leds("l_popBumper_three"), replicate(rainbow(60), len(find_leds("l_popBumper_three"))), len(find_leds("l_popBumper_three"))))
+write_show("vendor_bottom_fade_rainbow", gen_show(find_leds("l_vendor_bottom"), replicate(rainbow(60), len(find_leds("l_vendor_bottom"))), len(find_leds("l_vendor_bottom"))))
 
+write_show("vendor_bottom_wave_red", gen_show(find_leds("l_vendor_bottom"), replicate(wave(RED, 60), len(find_leds("l_vendor_bottom"))), len(find_leds("l_vendor_bottom"))))
