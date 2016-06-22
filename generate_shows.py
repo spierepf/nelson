@@ -2,6 +2,71 @@ from __future__ import division
 import yaml
 import collections
 
+"""
+ * The color white.  In the default sRGB space.
+"""
+WHITE     = (255, 255, 255);
+
+"""
+ * The color light gray.  In the default sRGB space.
+"""
+LIGHT_GRAY = (192, 192, 192);
+
+"""
+ * The color gray.  In the default sRGB space.
+"""
+GRAY      = (128, 128, 128);
+
+"""
+ * The color dark gray.  In the default sRGB space.
+"""
+DARK_GRAY  = (64, 64, 64);
+
+"""
+ * The color black.  In the default sRGB space.
+"""
+BLACK     = (0, 0, 0);
+
+"""
+ * The color red.  In the default sRGB space.
+"""
+RED       = (255, 0, 0);
+
+"""
+ * The color pink.  In the default sRGB space.
+"""
+PINK      = (255, 175, 175);
+
+"""
+ * The color orange.  In the default sRGB space.
+"""
+ORANGE    = (255, 200, 0);
+
+"""
+ * The color yellow.  In the default sRGB space.
+"""
+YELLOW    = (255, 255, 0);
+
+"""
+ * The color green.  In the default sRGB space.
+"""
+GREEN     = (0, 255, 0);
+
+"""
+ * The color magenta.  In the default sRGB space.
+"""
+MAGENTA   = (255, 0, 255);
+
+"""
+ * The color cyan.  In the default sRGB space.
+"""
+CYAN      = (0, 255, 255);
+
+"""
+ * The color blue.  In the default sRGB space.
+"""
+BLUE      = (0, 0, 255);
+
 with open('config/lights.yaml', 'r') as f:
     LEDS = yaml.load(f)["leds"]
 
@@ -26,6 +91,74 @@ def wheel(wheelPos):
     wheelPos -= 170/255;
     return (round((wheelPos * 3) * 255), round((255/255 - wheelPos * 3) * 255), 0);
 
+"""
+ * Creates a new <code>Color</code> that is a brighter version of this
+ * <code>Color</code>.
+ * <p>
+ * This method applies an arbitrary scale factor to each of the three RGB
+ * components of this <code>Color</code> to create a brighter version
+ * of this <code>Color</code>. Although <code>brighter</code> and
+ * <code>darker</code> are inverse operations, the results of a
+ * series of invocations of these two methods might be inconsistent
+ * because of rounding errors.
+ * @return     a new <code>Color</code> object that is
+ *                 a brighter version of this <code>Color</code>.
+ * @see        java.awt.Color#darker
+ * @since      JDK1.0
+"""
+def brighter(color, factor=0.7):
+    r = color[0]
+    g = color[1]
+    b = color[2]
+
+    """
+    /* From 2D group:
+     * 1. black.brighter() should return grey
+     * 2. applying brighter to blue will always return blue, brighter
+     * 3. non pure color (non zero rgb) will eventually return white
+     */
+    """
+    i = round(1.0/(1.0-factor));
+    if r == 0 and g == 0 and b == 0:
+       return (i, i, i)
+
+    if r > 0 and r < i:
+    	r = i;
+    if g > 0 and g < i:
+        g = i;
+    if b > 0 and b < i:
+        b = i;
+
+    return (min(round(r/factor), 255),
+            min(round(g/factor), 255),
+            min(round(b/factor), 255));
+
+"""
+ * Creates a new <code>Color</code> that is a darker version of this
+ * <code>Color</code>.
+ * <p>
+ * This method applies an arbitrary scale factor to each of the three RGB
+ * components of this <code>Color</code> to create a darker version of
+ * this <code>Color</code>.  Although <code>brighter</code> and
+ * <code>darker</code> are inverse operations, the results of a series
+ * of invocations of these two methods might be inconsistent because
+ * of rounding errors.
+ * @return  a new <code>Color</code> object that is
+ *                    a darker version of this <code>Color</code>.
+ * @see        java.awt.Color#brighter
+ * @since      JDK1.0
+"""
+def darker(color, factor = 0.7):
+    return (max(round(color[0]*FACTOR), 0),
+            max(round(color[1]*FACTOR), 0),
+            max(round(color[2]*FACTOR), 0))
+
+def blend(color1, factor, color2):
+    contrib1 = darker(color1, factor)
+    contrib2 = darker(color2, 1.0-factor)
+    return (min(contrib1[0]+contrib2[0], 255), 
+            min(contrib1[1]+contrib2[1], 255),
+            min(contrib1[2]+contrib2[2], 255))
 
 def rainbow(length):
     retval = [];
@@ -64,7 +197,7 @@ def write_show(name, show):
     with open('shows/'+name+'.yaml', 'w') as outfile:
         outfile.write(yaml.dump(show))
 
-write_show("popBumper_three_chase_red", gen_show(find_leds("l_popBumper_three"), [(255,0,0), (0,0,0), (0,0,0)]))
+write_show("popBumper_three_chase_red", gen_show(find_leds("l_popBumper_three"), [RED, BLACK, BLACK]))
 
 write_show("popBumper_three_chase_rainbow", gen_show(find_leds("l_popBumper_three"), rainbow(len(find_leds("l_popBumper_three")))))
 
