@@ -124,7 +124,7 @@ def brighter(color, factor=0.7):
        return (i, i, i)
 
     if r > 0 and r < i:
-    	r = i;
+        r = i;
     if g > 0 and g < i:
         g = i;
     if b > 0 and b < i:
@@ -168,11 +168,11 @@ def rainbow(length):
     return retval
 
 def wave(color, length):
-	retval = []
-	for i in range(length):
-		retval.append(darker(color, (1 + math.cos(2*math.pi * i / length)) / 2))
-	return retval
-		
+    retval = []
+    for i in range(length):
+        retval.append(darker(color, (1 + math.cos(2*math.pi * i / length)) / 2))
+    return retval
+        
 def replicate(pattern, count):
     retval = []
     for item in pattern:
@@ -207,74 +207,15 @@ def write_show(name, show):
     with open('shows/'+name+'.yaml', 'w') as outfile:
         outfile.write(yaml.dump(show))
 
-write_show("vendor_bottom_chase_red", gen_show(find_leds("l_vendor_bottom"), [RED, BLACK, BLACK]))
+l_vendor_bottom = find_leds("l_vendor_bottom")
+write_show("vendor_bottom_chase_red", gen_show(l_vendor_bottom, [RED, BLACK, BLACK]))
+write_show("vendor_bottom_lighthouse_halcon", gen_show(l_vendor_bottom, [darker(GREEN), GREEN, darker(GREEN)] + [BLACK]*3 + [darker(MAGENTA), MAGENTA, darker(MAGENTA)] + [BLACK]*3))
+write_show("vendor_bottom_chase_rainbow", gen_show(l_vendor_bottom, rainbow(len(l_vendor_bottom))))
+write_show("vendor_bottom_fade_rainbow", gen_show(l_vendor_bottom, replicate(rainbow(60), len(l_vendor_bottom)), len(l_vendor_bottom)))
+write_show("vendor_bottom_wave_red", gen_show(l_vendor_bottom, replicate(wave(RED, 60), len(l_vendor_bottom)), len(l_vendor_bottom)))
 
-write_show("vendor_bottom_lighthouse_halcon", gen_show(find_leds("l_vendor_bottom"), [
-    darker(GREEN), GREEN, darker(GREEN), BLACK, BLACK, BLACK,
-    darker(MAGENTA), MAGENTA, darker(MAGENTA), BLACK, BLACK, BLACK
-]))
+l_main_stage_arrow_0 = find_leds("l_main_stage_arrow_0")
+write_show("main_stage_arrow_0_chase_red", gen_show(l_main_stage_arrow_0, [RED, darker(RED)] + [BLACK]*22))
+write_show("main_stage_arrow_0_chase_rainbow", gen_show(l_main_stage_arrow_0, rainbow(30)))
+write_show("main_stage_arrow_0_flash_white", gen_show(l_main_stage_arrow_0, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_main_stage_arrow_0)), len(l_main_stage_arrow_0)))
 
-write_show("vendor_bottom_chase_rainbow", gen_show(find_leds("l_vendor_bottom"), rainbow(len(find_leds("l_vendor_bottom")))))
-
-write_show("vendor_bottom_fade_rainbow", gen_show(find_leds("l_vendor_bottom"), replicate(rainbow(60), len(find_leds("l_vendor_bottom"))), len(find_leds("l_vendor_bottom"))))
-
-write_show("vendor_bottom_wave_red", gen_show(find_leds("l_vendor_bottom"), replicate(wave(RED, 60), len(find_leds("l_vendor_bottom"))), len(find_leds("l_vendor_bottom"))))
-
-write_show("main_stage_arrow_0_chase_red", gen_show(find_leds("l_main_stage_arrow_0"), [
-    RED, 
-    darker(RED),
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK
-]))
-
-write_show("main_stage_arrow_0_chase_rainbow", gen_show(find_leds("l_main_stage_arrow_0"), rainbow(30)))
-
-write_show("main_stage_arrow_0_flash_white", gen_show(find_leds("l_main_stage_arrow_0"), replicate([
-    WHITE,
-    darker(WHITE),
-    BLACK,
-    WHITE,
-    darker(WHITE),
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK,
-    BLACK
-], len(find_leds("l_main_stage_arrow_0"))), len(find_leds("l_main_stage_arrow_0"))))
