@@ -110,22 +110,22 @@ leds:
         number: 35
 
     l_admissions_1:
-        number: 64
+        number: 511
 
     l_admissions_2:
-        number: 65
+        number: 511
 
     l_admissions_3:
-        number: 66
+        number: 511
 
-    l_main_stage_arrow_0_a: { number: 511 }
-    l_main_stage_arrow_0_b: { number: 511 }
-    l_main_stage_arrow_0_c: { number: 511 }
-    l_main_stage_arrow_0_d: { number: 511 }
-    l_main_stage_arrow_0_e: { number: 511 }
-    l_main_stage_arrow_0_f: { number: 511 }
-    l_main_stage_arrow_0_g: { number: 511 }
-    l_main_stage_arrow_0_h: { number: 511 }
+    l_main_stage_arrow_0_a: { number: 71 }
+    l_main_stage_arrow_0_b: { number: 70 }
+    l_main_stage_arrow_0_c: { number: 69 }
+    l_main_stage_arrow_0_d: { number: 68 }
+    l_main_stage_arrow_0_e: { number: 67 }
+    l_main_stage_arrow_0_f: { number: 66 }
+    l_main_stage_arrow_0_g: { number: 65 }
+    l_main_stage_arrow_0_h: { number: 64 }
 
     l_main_stage_arrow_1_a: { number: 511 }
     l_main_stage_arrow_1_b: { number: 511 }
