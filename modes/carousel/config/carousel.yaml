@@ -1,0 +1,116 @@
+# config_version=3
+
+mode:
+  start_events: ball_starting
+  stop_events: mode_selected
+  priority: 100
+  code: carousel.Carousel
+  
+slide_player:
+  cosplay_highlighted:
+    - type: text
+      text: CHOOSE YOUR MODE
+      v_pos: top
+      font: small
+    - type: text
+      text: "COSPLAY CONTEST"
+    - type: text
+      text: << SELECT
+      v_pos: bottom
+      h_pos: left
+      font: small
+    - type: text
+      text: NEXT >>
+      v_pos: bottom
+      h_pos: right
+      font: small
+
+  vendors_highlighted:
+    - type: text
+      text: CHOOSE YOUR MODE
+      v_pos: top
+      font: small
+    - type: text
+      text: "VENDOR AREA"
+    - type: text
+      text: << SELECT
+      v_pos: bottom
+      h_pos: left
+      font: small
+    - type: text
+      text: NEXT >>
+      v_pos: bottom
+      h_pos: right
+      font: small
+
+  auction_highlighted:
+    - type: text
+      text: CHOOSE YOUR MODE
+      v_pos: top
+      font: small
+    - type: text
+      text: "CHARITY AUCTION"
+    - type: text
+      text: << SELECT
+      v_pos: bottom
+      h_pos: left
+      font: small
+    - type: text
+      text: NEXT >>
+      v_pos: bottom
+      h_pos: right
+      font: small
+
+  photos_highlighted:
+    - type: text
+      text: CHOOSE YOUR MODE
+      v_pos: top
+      font: small
+    - type: text
+      text: "PHOTO OPS"
+    - type: text
+      text: << SELECT
+      v_pos: bottom
+      h_pos: left
+      font: small
+    - type: text
+      text: NEXT >>
+      v_pos: bottom
+      h_pos: right
+      font: small
+
+  gaming_highlighted:
+    - type: text
+      text: CHOOSE YOUR MODE
+      v_pos: top
+      font: small
+    - type: text
+      text: "GAMING FLOOR"
+    - type: text
+      text: << SELECT
+      v_pos: bottom
+      h_pos: left
+      font: small
+    - type: text
+      text: NEXT >>
+      v_pos: bottom
+      h_pos: right
+      font: small
+
+  stargazer_highlighted:
+    - type: text
+      text: CHOOSE YOUR MODE
+      v_pos: top
+      font: small
+    - type: text
+      text: "STARGAZER SOIREE"
+    - type: text
+      text: << SELECT
+      v_pos: bottom
+      h_pos: left
+      font: small
+    - type: text
+      text: NEXT >>
+      v_pos: bottom
+      h_pos: right
+      font: small

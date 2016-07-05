@@ -9,9 +9,7 @@ config:
     - targets.yaml
     - lights.yaml
     - shots.yaml
-
-modes:
-    - base
+    - modes.yaml
 
 fonts:
     weltron:

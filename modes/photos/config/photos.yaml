@@ -1,0 +1,18 @@
+# config_version=3
+
+mode:
+  start_events: photos_selected
+  stop_events: timer_mode_stop_timer_complete
+  priority: 100
+
+timers:
+  mode_stop_timer:
+    end_value: 4
+    control_events:
+      - event: s_fixedTarget_post_inline_active
+        action: start
+
+show_player:
+    s_fixedTarget_post_inline_active:
+      - show: peanut_butter_jelly_time
+        tocks_per_sec: 1

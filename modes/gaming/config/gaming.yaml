@@ -1,0 +1,20 @@
+# config_version=3
+
+mode:
+  start_events: gaming_selected
+  stop_events: logicblock_gaming_complete
+  priority: 100
+
+logic_blocks:
+  sequences:
+    gaming:
+      enable_events: mode_gaming_started
+      events:
+        - dropTargetBank_right_down
+        - balldevice_kickout_right_ball_enter
+
+slide_player:
+  dropTargetBank_right_down:
+    - type: text
+      text: "NOW GO FOR THE KICKOUT!"
+      expire: 3s

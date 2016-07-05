@@ -23,9 +23,11 @@ switches:
 
     s_flipper_left:
         number: 5-5
+        tags: carousel_select_item
 
     s_flipper_right:
         number: 5-6
+        tags: carousel_next_item
 
     s_outlane_right:
         number: 5-7
@@ -111,5 +113,7 @@ switches:
     s_fixedTarget_post_inline:
         number: 1-10
         
-    s_1_11:
+    s_mainStage_entry:
         number: 1-11
+        tags: kingpyn_disable_pullup
+

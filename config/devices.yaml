@@ -47,7 +47,30 @@ ball_devices:
         entrance_count_delay: 300ms
         exit_count_delay: 3s
         tags: ball_add_live
-        
+
+ball_locks:
+  ballLock_left:
+    balls_to_lock: 1
+    lock_devices: kickOut_left
+    debug: true
+    tags: ballLock_left
+    label: ballLock_left
+    enable_events:
+      mode_stargazer_started: 0
+    disable_events:
+      mode_stargazer_stopped: 0
+
+  ballLock_right:
+    balls_to_lock: 1
+    lock_devices: kickOut_right
+    debug: true
+    tags: ballLock_right
+    label: ballLock_right
+    enable_events:
+      mode_stargazer_started: 0
+    disable_events:
+      mode_stargazer_stopped: 0
+
 autofire_coils:
     slingshot_right:
         coil: c_slingshot_right

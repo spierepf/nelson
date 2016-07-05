@@ -1,0 +1,12 @@
+#config_version=3
+
+modes:
+  - base
+  - carousel
+  - cosplay
+  - vendors
+  - auction
+  - photos
+  - gaming
+  - stargazer
+

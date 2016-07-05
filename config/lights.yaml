@@ -1,119 +1,311 @@
 #config_version=3
 
 leds:
-    l_popBumper_bottom_0:
+    l_vendor_bottom_a:
         number: 0
 
-    l_popBumper_bottom_1:
+    l_vendor_bottom_b:
         number: 1
 
-    l_popBumper_bottom_2:
+    l_vendor_bottom_c:
         number: 2
 
-    l_popBumper_bottom_3:
+    l_vendor_bottom_d:
         number: 3
 
-    l_popBumper_bottom_4:
+    l_vendor_bottom_e:
         number: 4
 
-    l_popBumper_bottom_5:
+    l_vendor_bottom_f:
         number: 5
 
-    l_popBumper_bottom_6:
+    l_vendor_bottom_g:
         number: 6
 
-    l_popBumper_bottom_7:
+    l_vendor_bottom_h:
         number: 7
 
-    l_popBumper_bottom_8:
+    l_vendor_bottom_i:
         number: 8
 
-    l_popBumper_bottom_9:
+    l_vendor_bottom_j:
         number: 9
 
-    l_popBumper_bottom_10:
+    l_vendor_bottom_k:
         number: 10
 
-    l_popBumper_bottom_11:
+    l_vendor_bottom_l:
         number: 11
 
-    l_popBumper_right_0:
+    l_vendor_right_a:
         number: 12
 
-    l_popBumper_right_1:
+    l_vendor_right_b:
         number: 13
 
-    l_popBumper_right_2:
+    l_vendor_right_c:
         number: 14
 
-    l_popBumper_right_3:
+    l_vendor_right_d:
         number: 15
 
-    l_popBumper_right_4:
+    l_vendor_right_e:
         number: 16
 
-    l_popBumper_right_5:
+    l_vendor_right_f:
         number: 17
 
-    l_popBumper_right_6:
+    l_vendor_right_g:
         number: 18
 
-    l_popBumper_right_7:
+    l_vendor_right_h:
         number: 19
 
-    l_popBumper_right_8:
+    l_vendor_right_i:
         number: 20
 
-    l_popBumper_right_9:
+    l_vendor_right_j:
         number: 21
 
-    l_popBumper_right_10:
+    l_vendor_right_k:
         number: 22
 
-    l_popBumper_right_11:
+    l_vendor_right_l:
         number: 23
 
-    l_popBumper_three_0:
+    l_vendor_left_a:
         number: 24
 
-    l_popBumper_three_0:
+    l_vendor_left_b:
         number: 25
 
-    l_popBumper_three_0:
+    l_vendor_left_c:
         number: 26
 
-    l_popBumper_three_0:
+    l_vendor_left_d:
         number: 27
 
-    l_popBumper_three_0:
+    l_vendor_left_e:
         number: 28
 
-    l_popBumper_three_0:
+    l_vendor_left_f:
         number: 29
 
-    l_popBumper_three_0:
+    l_vendor_left_g:
         number: 30
 
-    l_popBumper_three_0:
+    l_vendor_left_h:
         number: 31
 
-    l_popBumper_three_0:
+    l_vendor_left_i:
         number: 32
 
-    l_popBumper_three_0:
+    l_vendor_left_j:
         number: 33
 
-    l_popBumper_three_0:
+    l_vendor_left_k:
         number: 34
 
-    l_popBumper_three_0:
+    l_vendor_left_l:
         number: 35
 
-    l_upperLane_1:
-        number: 64
+    l_admissions_1:
+        number: 511
 
-    l_upperLane_2:
-        number: 65
+    l_admissions_2:
+        number: 511
 
-    l_upperLane_3:
-        number: 66
+    l_admissions_3:
+        number: 511
+
+    l_main_stage_arrow_0_a: { number: 71 }
+    l_main_stage_arrow_0_b: { number: 70 }
+    l_main_stage_arrow_0_c: { number: 69 }
+    l_main_stage_arrow_0_d: { number: 68 }
+    l_main_stage_arrow_0_e: { number: 67 }
+    l_main_stage_arrow_0_f: { number: 66 }
+    l_main_stage_arrow_0_g: { number: 65 }
+    l_main_stage_arrow_0_h: { number: 64 }
+
+    l_main_stage_arrow_1_a: { number: 511 }
+    l_main_stage_arrow_1_b: { number: 511 }
+    l_main_stage_arrow_1_c: { number: 511 }
+    l_main_stage_arrow_1_d: { number: 511 }
+    l_main_stage_arrow_1_e: { number: 511 }
+    l_main_stage_arrow_1_f: { number: 511 }
+    l_main_stage_arrow_1_g: { number: 511 }
+    l_main_stage_arrow_1_h: { number: 511 }
+
+    l_main_stage_arrow_2_a: { number: 511 }
+    l_main_stage_arrow_2_b: { number: 511 }
+    l_main_stage_arrow_2_c: { number: 511 }
+    l_main_stage_arrow_2_d: { number: 511 }
+    l_main_stage_arrow_2_e: { number: 511 }
+    l_main_stage_arrow_2_f: { number: 511 }
+    l_main_stage_arrow_2_g: { number: 511 }
+    l_main_stage_arrow_2_h: { number: 511 }
+
+    l_xp_multiplier_2_a: { number: 511 }
+    l_xp_multiplier_2_b: { number: 511 }
+    l_xp_multiplier_2_c: { number: 511 }
+    l_xp_multiplier_2_d: { number: 511 }
+    l_xp_multiplier_2_e: { number: 511 }
+    l_xp_multiplier_2_f: { number: 511 }
+    l_xp_multiplier_2_g: { number: 511 }
+
+    l_xp_multiplier_3_a: { number: 511 }
+    l_xp_multiplier_3_b: { number: 511 }
+    l_xp_multiplier_3_c: { number: 511 }
+    l_xp_multiplier_3_d: { number: 511 }
+    l_xp_multiplier_3_e: { number: 511 }
+    l_xp_multiplier_3_f: { number: 511 }
+    l_xp_multiplier_3_g: { number: 511 }
+
+    l_xp_multiplier_5_a: { number: 511 }
+    l_xp_multiplier_5_b: { number: 511 }
+    l_xp_multiplier_5_c: { number: 511 }
+    l_xp_multiplier_5_d: { number: 511 }
+    l_xp_multiplier_5_e: { number: 511 }
+    l_xp_multiplier_5_f: { number: 511 }
+    l_xp_multiplier_5_g: { number: 511 }
+
+    l_spinner_arrow_a: { number: 511 }
+    l_spinner_arrow_b: { number: 511 }
+    l_spinner_arrow_c: { number: 511 }
+    l_spinner_arrow_d: { number: 511 }
+    l_spinner_arrow_e: { number: 511 }
+    l_spinner_arrow_f: { number: 511 }
+    l_spinner_arrow_g: { number: 511 }
+    l_spinner_arrow_h: { number: 511 }
+
+    l_photos_arrow_a: { number: 511 }
+    l_photos_arrow_b: { number: 511 }
+    l_photos_arrow_c: { number: 511 }
+    l_photos_arrow_d: { number: 511 }
+    l_photos_arrow_e: { number: 511 }
+    l_photos_arrow_f: { number: 511 }
+    l_photos_arrow_g: { number: 511 }
+    l_photos_arrow_h: { number: 511 }
+
+    l_gaming_drop_target_0: { number: 511 }
+    l_gaming_drop_target_1: { number: 511 }
+    l_gaming_drop_target_2: { number: 511 }
+
+    l_xp_bar_a: { number: 511 }
+    l_xp_bar_b: { number: 511 }
+    l_xp_bar_c: { number: 511 }
+    l_xp_bar_d: { number: 511 }
+    l_xp_bar_e: { number: 511 }
+    l_xp_bar_f: { number: 511 }
+    l_xp_bar_g: { number: 511 }
+    l_xp_bar_h: { number: 511 }
+
+    l_other_bar_0_a: { number: 511 }
+    l_other_bar_0_b: { number: 511 }
+    l_other_bar_0_c: { number: 511 }
+    l_other_bar_0_d: { number: 511 }
+    l_other_bar_0_e: { number: 511 }
+    l_other_bar_0_f: { number: 511 }
+    l_other_bar_0_g: { number: 511 }
+    l_other_bar_0_h: { number: 511 }
+
+    l_other_bar_1_a: { number: 511 }
+    l_other_bar_1_b: { number: 511 }
+    l_other_bar_1_c: { number: 511 }
+    l_other_bar_1_d: { number: 511 }
+    l_other_bar_1_e: { number: 511 }
+    l_other_bar_1_f: { number: 511 }
+    l_other_bar_1_g: { number: 511 }
+    l_other_bar_1_h: { number: 511 }
+
+    l_cosplay_drop_target_0: { number: 511 }
+    l_cosplay_drop_target_1: { number: 511 }
+    l_cosplay_drop_target_2: { number: 511 }
+
+    l_left_kickout_arrow_a: { number: 511 }
+    l_left_kickout_arrow_b: { number: 511 }
+    l_left_kickout_arrow_c: { number: 511 }
+    l_left_kickout_arrow_d: { number: 511 }
+    l_left_kickout_arrow_e: { number: 511 }
+    l_left_kickout_arrow_f: { number: 511 }
+    l_left_kickout_arrow_g: { number: 511 }
+    l_left_kickout_arrow_h: { number: 511 }
+
+    l_right_kickout_arrow_a: { number: 511 }
+    l_right_kickout_arrow_b: { number: 511 }
+    l_right_kickout_arrow_c: { number: 511 }
+    l_right_kickout_arrow_d: { number: 511 }
+    l_right_kickout_arrow_e: { number: 511 }
+    l_right_kickout_arrow_f: { number: 511 }
+    l_right_kickout_arrow_g: { number: 511 }
+    l_right_kickout_arrow_h: { number: 511 }
+
+    l_gaming_mode_a: { number: 511 }
+    l_gaming_mode_b: { number: 511 }
+    l_gaming_mode_c: { number: 511 }
+
+    l_vendor_mode_a: { number: 511 }
+    l_vendor_mode_b: { number: 511 }
+    l_vendor_mode_c: { number: 511 }
+
+    l_auction_mode_a: { number: 511 }
+    l_auction_mode_b: { number: 511 }
+    l_auction_mode_c: { number: 511 }
+
+    l_photo_mode_a: { number: 511 }
+    l_photo_mode_b: { number: 511 }
+    l_photo_mode_c: { number: 511 }
+
+    l_cosplay_mode_a: { number: 511 }
+    l_cosplay_mode_b: { number: 511 }
+    l_cosplay_mode_c: { number: 511 }
+
+    l_stargazer_mode_a: { number: 511 }
+    l_stargazer_mode_b: { number: 511 }
+    l_stargazer_mode_c: { number: 511 }
+
+    l_extra_ball_a: { number: 511 }
+    l_extra_ball_b: { number: 511 }
+    l_extra_ball_c: { number: 511 }
+    l_extra_ball_d: { number: 511 }
+    l_extra_ball_e: { number: 511 }
+    l_extra_ball_f: { number: 511 }
+    l_extra_ball_g: { number: 511 }
+    l_extra_ball_h: { number: 511 }
+
+    l_jackpot_a: { number: 511 }
+    l_jackpot_b: { number: 511 }
+    l_jackpot_c: { number: 511 }
+    l_jackpot_d: { number: 511 }
+    l_jackpot_e: { number: 511 }
+    l_jackpot_f: { number: 511 }
+    l_jackpot_g: { number: 511 }
+    l_jackpot_h: { number: 511 }
+
+    l_multiball_a: { number: 511 }
+    l_multiball_b: { number: 511 }
+    l_multiball_c: { number: 511 }
+    l_multiball_d: { number: 511 }
+    l_multiball_e: { number: 511 }
+    l_multiball_f: { number: 511 }
+    l_multiball_g: { number: 511 }
+    l_multiball_h: { number: 511 }
+
+    l_left_outlane: { number: 511 }
+    l_left_inlane: { number: 511 }
+    l_right_inlane: { number: 511 }
+    l_right_outlane: { number: 511 }
+
+    l_ball_save_a: { number: 511 }
+    l_ball_save_b: { number: 511 }
+    l_ball_save_c: { number: 511 }
+    l_ball_save_d: { number: 511 }
+    l_ball_save_e: { number: 511 }
+    l_ball_save_f: { number: 511 }
+    l_ball_save_g: { number: 511 }
+    l_ball_save_h: { number: 511 }
+    l_ball_save_i: { number: 511 }
+    l_ball_save_j: { number: 511 }
+    l_ball_save_k: { number: 511 }
+    l_ball_save_l: { number: 511 }
+
