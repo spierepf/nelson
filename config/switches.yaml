@@ -113,5 +113,7 @@ switches:
     s_fixedTarget_post_inline:
         number: 1-10
         
-    s_1_11:
+    s_mainStage_entry:
         number: 1-11
+        tags: kingpyn_disable_pullup
+
