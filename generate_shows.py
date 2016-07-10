@@ -214,8 +214,31 @@ write_show("vendor_bottom_chase_rainbow", gen_show(l_vendor_bottom, rainbow(len(
 write_show("vendor_bottom_fade_rainbow", gen_show(l_vendor_bottom, replicate(rainbow(60), len(l_vendor_bottom)), len(l_vendor_bottom)))
 write_show("vendor_bottom_wave_red", gen_show(l_vendor_bottom, replicate(wave(RED, 60), len(l_vendor_bottom)), len(l_vendor_bottom)))
 
-l_main_stage_arrow_0 = find_leds("l_main_stage_arrow_0")
-write_show("main_stage_arrow_0_chase_red", gen_show(l_main_stage_arrow_0, [RED, darker(RED)] + [BLACK]*22))
-write_show("main_stage_arrow_0_chase_rainbow", gen_show(l_main_stage_arrow_0, rainbow(30)))
-write_show("main_stage_arrow_0_flash_white", gen_show(l_main_stage_arrow_0, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_main_stage_arrow_0)), len(l_main_stage_arrow_0)))
+l_vendor_left = find_leds("l_vendor_left")
+write_show("vendor_left_chase_red", gen_show(l_vendor_left, [RED, BLACK, BLACK]))
+write_show("vendor_left_lighthouse_halcon", gen_show(l_vendor_left, [darker(GREEN), GREEN, darker(GREEN)] + [BLACK]*3 + [darker(MAGENTA), MAGENTA, darker(MAGENTA)] + [BLACK]*3))
+write_show("vendor_left_chase_rainbow", gen_show(l_vendor_left, rainbow(len(l_vendor_left))))
+write_show("vendor_left_fade_rainbow", gen_show(l_vendor_left, replicate(rainbow(60), len(l_vendor_left)), len(l_vendor_left)))
+write_show("vendor_left_wave_red", gen_show(l_vendor_left, replicate(wave(RED, 60), len(l_vendor_left)), len(l_vendor_left)))
+
+l_photos_arrow = find_leds("l_photos_arrow")
+write_show("photos_arrow_chase_red", gen_show(l_photos_arrow, [RED, darker(RED)] + [BLACK]*22))
+write_show("photos_arrow_chase_rainbow", gen_show(l_photos_arrow, rainbow(30)))
+write_show("photos_arrow_flash_white", gen_show(l_photos_arrow, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_photos_arrow)), len(l_photos_arrow)))
+
+l_spinner_arrow = find_leds("l_spinner_arrow")
+write_show("spinner_arrow_chase_red", gen_show(l_spinner_arrow, [RED, darker(RED)] + [BLACK]*22))
+write_show("spinner_arrow_chase_rainbow", gen_show(l_spinner_arrow, rainbow(30)))
+write_show("spinner_arrow_flash_white", gen_show(l_spinner_arrow, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_spinner_arrow)), len(l_spinner_arrow)))
+
+l_left_kickout_arrow = find_leds("l_left_kickout_arrow")
+write_show("left_kickout_arrow_chase_red", gen_show(l_left_kickout_arrow, [RED, darker(RED)] + [BLACK]*22))
+write_show("left_kickout_arrow_chase_rainbow", gen_show(l_left_kickout_arrow, rainbow(30)))
+write_show("left_kickout_arrow_flash_white", gen_show(l_left_kickout_arrow, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_left_kickout_arrow)), len(l_left_kickout_arrow)))
+
+l_right_kickout_arrow = find_leds("l_right_kickout_arrow")
+write_show("right_kickout_arrow_chase_red", gen_show(l_right_kickout_arrow, [RED, darker(RED)] + [BLACK]*22))
+write_show("right_kickout_arrow_chase_rainbow", gen_show(l_right_kickout_arrow, rainbow(30)))
+write_show("right_kickout_arrow_flash_white", gen_show(l_right_kickout_arrow, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_right_kickout_arrow)), len(l_right_kickout_arrow)))
+
 

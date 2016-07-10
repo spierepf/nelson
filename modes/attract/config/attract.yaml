@@ -10,6 +10,14 @@ light_player:
     mode_attract_started:
       - show: vendor_bottom_fade_rainbow
         repeat: yes
-      - show: main_stage_arrow_0_chase_rainbow
+      - show: vendor_left_fade_rainbow
         repeat: yes
+      - show: photos_arrow_chase_rainbow
+        repeat: yes
+      - show: spinner_arrow_chase_rainbow
+        repeat: yes
+#      - show: left_kickout_chase_rainbow
+#        repeat: yes
+#      - show: right_kickout_chase_rainbow
+#        repeat: yes
 
