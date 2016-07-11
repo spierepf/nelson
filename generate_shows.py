@@ -209,57 +209,114 @@ def write_show(name, show):
     with open('shows/'+name+'.yaml', 'w') as outfile:
         outfile.write(yaml.dump(show))
 
-def color_chase(leds, color_name, black_length=1):
-    color = COLORS[color_name]
-    return gen_show(leds, [color, darker(color)] + [COLORS['black']]*black_length)
-
-def halcon_lighthouse(leds):
-    return gen_show(leds, [darker(COLORS['green']), COLORS['green'], darker(COLORS['green'])] + [COLORS['black']]*3 + [darker(COLORS['magenta']), COLORS['magenta'], darker(COLORS['magenta'])] + [COLORS['black']]*3)
-
-def rainbow_chase(leds, length = None):
-    return gen_show(leds, rainbow(len(leds))) if length == None else gen_show(leds, rainbow(length)) 
-
-def rainbow_fade(leds):
-    return gen_show(leds, replicate(rainbow(60), len(leds)), len(leds))
-
-def color_wave(leds, color_name):
-    color = COLORS[color_name]
-    return gen_show(l_vendor_bottom, replicate(wave(color, 60), len(l_vendor_bottom)), len(l_vendor_bottom))
-
 def color_flash(leds, color_name):
     color = COLORS[color_name]
     return gen_show(leds, replicate([color, darker(color), COLORS['black']]*2 + [COLORS['black']]*22, len(leds)), len(leds))
 
-l_vendor_bottom = find_leds("l_vendor_bottom")
-write_show("vendor_bottom_chase_red", color_chase(l_vendor_bottom, 'red'))
-write_show("vendor_bottom_lighthouse_halcon", halcon_lighthouse(l_vendor_bottom))
-write_show("vendor_bottom_chase_rainbow", rainbow_chase(l_vendor_bottom))
-write_show("vendor_bottom_fade_rainbow", rainbow_fade(l_vendor_bottom))
-write_show("vendor_bottom_wave_red", color_wave(l_vendor_bottom, 'red'))
+'''*************************************************************************************************'''
 
-l_vendor_left = find_leds("l_vendor_left")
-write_show("vendor_left_chase_red", color_chase(l_vendor_left, 'red'))
-write_show("vendor_left_lighthouse_halcon", halcon_lighthouse(l_vendor_left))
-write_show("vendor_left_chase_rainbow", rainbow_chase(l_vendor_left))
-write_show("vendor_left_fade_rainbow", rainbow_fade(l_vendor_left))
-write_show("vendor_left_wave_red", color_wave(l_vendor_left, 'red'))
+class Show(object):
+    def __init__(self, leds_name):
+        self.leds_name = leds_name
+    
+    def leds(self):
+        return find_leds("l_"+self.leds_name)
+        
+    def write(self):
+        write_show(self.name(), self.show()) 
 
-l_photos_arrow = find_leds("l_photos_arrow")
-write_show("photos_arrow_chase_red", color_chase(l_photos_arrow, 'red', 22))
-write_show("photos_arrow_chase_rainbow", rainbow_chase(l_photos_arrow, 30))
-write_show("photos_arrow_flash_white", color_flash(l_photos_arrow, 'white'))
+'''*************************************************************************************************'''
 
-l_spinner_arrow = find_leds("l_spinner_arrow")
-write_show("spinner_arrow_chase_red", color_chase(l_spinner_arrow, 'red', 22))
-write_show("spinner_arrow_chase_rainbow", rainbow_chase(l_spinner_arrow, 30))
-write_show("spinner_arrow_flash_white", color_flash(l_spinner_arrow, 'white'))
+class ColorChase(Show):
+    def __init__(self, leds_name, color_name, black_length = 1):
+        super(ColorChase, self).__init__(leds_name)
+        self.color_name = color_name
+        self.black_length = black_length
 
-l_left_kickout_arrow = find_leds("l_left_kickout_arrow")
-write_show("left_kickout_arrow_chase_red", color_chase(l_left_kickout_arrow, 'red', 22))
-write_show("left_kickout_arrow_chase_rainbow", rainbow_chase(l_left_kickout_arrow, 30))
-write_show("left_kickout_arrow_flash_white", color_flash(l_left_kickout_arrow, 'white'))
+    def show(self):
+        color = COLORS[self.color_name]
+        return gen_show(self.leds(), [color, darker(color)] + [COLORS['black']]*self.black_length)
+    
+    def name(self):
+        return self.leds_name + "_chase_" + self.color_name
 
-l_right_kickout_arrow = find_leds("l_right_kickout_arrow")
-write_show("right_kickout_arrow_chase_red", color_chase(l_right_kickout_arrow, 'red', 22))
-write_show("right_kickout_arrow_chase_rainbow", rainbow_chase(l_right_kickout_arrow, 30))
-write_show("right_kickout_arrow_flash_white", color_flash(l_right_kickout_arrow, 'white'))
+'''*************************************************************************************************'''
+
+class LighthouseHalcon(Show):
+    def __init__(self, leds_name):
+        super(LighthouseHalcon, self).__init__(leds_name)
+
+    def show(self):
+        return gen_show(self.leds(), [darker(COLORS['green']), COLORS['green'], darker(COLORS['green'])] + [COLORS['black']]*3 + [darker(COLORS['magenta']), COLORS['magenta'], darker(COLORS['magenta'])] + [COLORS['black']]*3)
+    
+    def name(self):
+        return self.leds_name + "_lighthouse_halcon"
+
+'''*************************************************************************************************'''
+
+class RainbowChase(Show):
+    def __init__(self, leds_name, length=None):
+        super(RainbowChase, self).__init__(leds_name)
+        self.length = len(self.leds()) if length==None else length
+
+    def show(self):
+        return gen_show(self.leds(), rainbow(self.length)) 
+    
+    def name(self):
+        return self.leds_name + "_chase_rainbow"
+
+'''*************************************************************************************************'''
+
+class RainbowFade(Show):
+    def __init__(self, leds_name, length=60):
+        super(RainbowFade, self).__init__(leds_name)
+        self.length = length
+
+    def show(self):
+        return gen_show(self.leds(), replicate(rainbow(self.length), len(self.leds())), len(self.leds()))
+    
+    def name(self):
+        return self.leds_name + "_fade_rainbow"
+
+'''*************************************************************************************************'''
+
+class ColorWave(Show):
+    def __init__(self, leds_name, color_name, length=60):
+        super(ColorWave, self).__init__(leds_name)
+        self.color_name = color_name
+        self.length = length
+
+    def show(self):
+        color = COLORS[self.color_name]
+    	return gen_show(self.leds(), replicate(wave(color, self.length), len(self.leds())), len(self.leds()))
+    
+    def name(self):
+        return self.leds_name + "_wave_" + self.color_name
+
+'''*************************************************************************************************'''
+
+class ColorFlash(Show):
+    def __init__(self, leds_name, color_name):
+        super(ColorFlash, self).__init__(leds_name)
+        self.color_name = color_name
+
+    def show(self):
+        color = COLORS[self.color_name]
+        return gen_show(self.leds(), replicate([color, darker(color), COLORS['black']]*2 + [COLORS['black']]*22, len(self.leds())), len(self.leds()))
+    
+    def name(self):
+        return self.leds_name + "_wave_" + self.color_name
+
+'''*************************************************************************************************'''
+
+for leds_name in ["vendor_left", "vendor_right", "vendor_bottom"]:
+	ColorChase(leds_name, "red").write()
+	LighthouseHalcon(leds_name).write()
+	RainbowChase(leds_name).write()
+	RainbowFade(leds_name).write()
+	ColorWave(leds_name, "red").write()
+
+for leds_name in ["photos_arrow", "spinner_arrow", "left_kickout_arrow", "right_kickout_arrow"]:
+	ColorChase(leds_name, "red", 22).write()
+	RainbowChase(leds_name, 30).write()
+	ColorFlash(leds_name, "white").write()
