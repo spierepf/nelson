@@ -3,70 +3,72 @@ import yaml
 import collections
 import math
 
+COLORS = {}
+
 """
  * The color white.  In the default sRGB space.
 """
-WHITE     = (255, 255, 255);
+COLORS['white']     = (255, 255, 255);
 
 """
  * The color light gray.  In the default sRGB space.
 """
-LIGHT_GRAY = (192, 192, 192);
+COLORS['lightgray'] = (192, 192, 192);
 
 """
  * The color gray.  In the default sRGB space.
 """
-GRAY      = (128, 128, 128);
+COLORS['gray']      = (128, 128, 128);
 
 """
  * The color dark gray.  In the default sRGB space.
 """
-DARK_GRAY  = (64, 64, 64);
+COLORS['darkgray']  = (64, 64, 64);
 
 """
  * The color black.  In the default sRGB space.
 """
-BLACK     = (0, 0, 0);
+COLORS['black']     = (0, 0, 0);
 
 """
  * The color red.  In the default sRGB space.
 """
-RED       = (255, 0, 0);
+COLORS['red']       = (255, 0, 0);
 
 """
  * The color pink.  In the default sRGB space.
 """
-PINK      = (255, 175, 175);
+COLORS['pink']      = (255, 175, 175);
 
 """
  * The color orange.  In the default sRGB space.
 """
-ORANGE    = (255, 200, 0);
+COLORS['oragne']    = (255, 200, 0);
 
 """
  * The color yellow.  In the default sRGB space.
 """
-YELLOW    = (255, 255, 0);
+COLORS['yellow']    = (255, 255, 0);
 
 """
  * The color green.  In the default sRGB space.
 """
-GREEN     = (0, 255, 0);
+COLORS['green']     = (0, 255, 0);
 
 """
  * The color magenta.  In the default sRGB space.
 """
-MAGENTA   = (255, 0, 255);
+COLORS['magenta']   = (255, 0, 255);
 
 """
  * The color cyan.  In the default sRGB space.
 """
-CYAN      = (0, 255, 255);
+COLORS['cyan']      = (0, 255, 255);
 
 """
  * The color blue.  In the default sRGB space.
 """
-BLUE      = (0, 0, 255);
+COLORS['blue']      = (0, 0, 255);
 
 with open('config/lights.yaml', 'r') as f:
     LEDS = yaml.load(f)["leds"]
@@ -207,11 +209,12 @@ def write_show(name, show):
     with open('shows/'+name+'.yaml', 'w') as outfile:
         outfile.write(yaml.dump(show))
 
-def color_chase(leds, color, black_length=1):
-    return gen_show(leds, [color, darker(color)] + [BLACK]*black_length)
+def color_chase(leds, color_name, black_length=1):
+    color = COLORS[color_name]
+    return gen_show(leds, [color, darker(color)] + [COLORS['black']]*black_length)
 
 def halcon_lighthouse(leds):
-    return gen_show(leds, [darker(GREEN), GREEN, darker(GREEN)] + [BLACK]*3 + [darker(MAGENTA), MAGENTA, darker(MAGENTA)] + [BLACK]*3)
+    return gen_show(leds, [darker(COLORS['green']), COLORS['green'], darker(COLORS['green'])] + [COLORS['black']]*3 + [darker(COLORS['magenta']), COLORS['magenta'], darker(COLORS['magenta'])] + [COLORS['black']]*3)
 
 def rainbow_chase(leds, length = None):
     return gen_show(leds, rainbow(len(leds))) if length == None else gen_show(leds, rainbow(length)) 
@@ -219,42 +222,44 @@ def rainbow_chase(leds, length = None):
 def rainbow_fade(leds):
     return gen_show(leds, replicate(rainbow(60), len(leds)), len(leds))
 
-def color_wave(leds, color):
+def color_wave(leds, color_name):
+    color = COLORS[color_name]
     return gen_show(l_vendor_bottom, replicate(wave(color, 60), len(l_vendor_bottom)), len(l_vendor_bottom))
 
-def color_flash(leds, color):
-    return gen_show(leds, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(leds)), len(leds))
+def color_flash(leds, color_name):
+    color = COLORS[color_name]
+    return gen_show(leds, replicate([color, darker(color), COLORS['black']]*2 + [COLORS['black']]*22, len(leds)), len(leds))
 
 l_vendor_bottom = find_leds("l_vendor_bottom")
-write_show("vendor_bottom_chase_red", color_chase(l_vendor_bottom, RED))
+write_show("vendor_bottom_chase_red", color_chase(l_vendor_bottom, 'red'))
 write_show("vendor_bottom_lighthouse_halcon", halcon_lighthouse(l_vendor_bottom))
 write_show("vendor_bottom_chase_rainbow", rainbow_chase(l_vendor_bottom))
 write_show("vendor_bottom_fade_rainbow", rainbow_fade(l_vendor_bottom))
-write_show("vendor_bottom_wave_red", color_wave(l_vendor_bottom, RED))
+write_show("vendor_bottom_wave_red", color_wave(l_vendor_bottom, 'red'))
 
 l_vendor_left = find_leds("l_vendor_left")
-write_show("vendor_left_chase_red", color_chase(l_vendor_left, RED))
+write_show("vendor_left_chase_red", color_chase(l_vendor_left, 'red'))
 write_show("vendor_left_lighthouse_halcon", halcon_lighthouse(l_vendor_left))
 write_show("vendor_left_chase_rainbow", rainbow_chase(l_vendor_left))
 write_show("vendor_left_fade_rainbow", rainbow_fade(l_vendor_left))
-write_show("vendor_left_wave_red", color_wave(l_vendor_left, RED))
+write_show("vendor_left_wave_red", color_wave(l_vendor_left, 'red'))
 
 l_photos_arrow = find_leds("l_photos_arrow")
-write_show("photos_arrow_chase_red", color_chase(l_photos_arrow, RED, 22))
+write_show("photos_arrow_chase_red", color_chase(l_photos_arrow, 'red', 22))
 write_show("photos_arrow_chase_rainbow", rainbow_chase(l_photos_arrow, 30))
-write_show("photos_arrow_flash_white", color_flash(l_photos_arrow, WHITE))
+write_show("photos_arrow_flash_white", color_flash(l_photos_arrow, 'white'))
 
 l_spinner_arrow = find_leds("l_spinner_arrow")
-write_show("spinner_arrow_chase_red", color_chase(l_spinner_arrow, RED, 22))
+write_show("spinner_arrow_chase_red", color_chase(l_spinner_arrow, 'red', 22))
 write_show("spinner_arrow_chase_rainbow", rainbow_chase(l_spinner_arrow, 30))
-write_show("spinner_arrow_flash_white", color_flash(l_spinner_arrow, WHITE))
+write_show("spinner_arrow_flash_white", color_flash(l_spinner_arrow, 'white'))
 
 l_left_kickout_arrow = find_leds("l_left_kickout_arrow")
-write_show("left_kickout_arrow_chase_red", color_chase(l_left_kickout_arrow, RED, 22))
+write_show("left_kickout_arrow_chase_red", color_chase(l_left_kickout_arrow, 'red', 22))
 write_show("left_kickout_arrow_chase_rainbow", rainbow_chase(l_left_kickout_arrow, 30))
-write_show("left_kickout_arrow_flash_white", color_flash(l_left_kickout_arrow, WHITE))
+write_show("left_kickout_arrow_flash_white", color_flash(l_left_kickout_arrow, 'white'))
 
 l_right_kickout_arrow = find_leds("l_right_kickout_arrow")
-write_show("right_kickout_arrow_chase_red", color_chase(l_right_kickout_arrow, RED, 22))
+write_show("right_kickout_arrow_chase_red", color_chase(l_right_kickout_arrow, 'red', 22))
 write_show("right_kickout_arrow_chase_rainbow", rainbow_chase(l_right_kickout_arrow, 30))
-write_show("right_kickout_arrow_flash_white", color_flash(l_right_kickout_arrow, WHITE))
+write_show("right_kickout_arrow_flash_white", color_flash(l_right_kickout_arrow, 'white'))
