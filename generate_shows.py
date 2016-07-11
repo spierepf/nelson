@@ -207,38 +207,54 @@ def write_show(name, show):
     with open('shows/'+name+'.yaml', 'w') as outfile:
         outfile.write(yaml.dump(show))
 
+def color_chase(leds, color, black_length=1):
+    return gen_show(leds, [color, darker(color)] + [BLACK]*black_length)
+
+def halcon_lighthouse(leds):
+    return gen_show(leds, [darker(GREEN), GREEN, darker(GREEN)] + [BLACK]*3 + [darker(MAGENTA), MAGENTA, darker(MAGENTA)] + [BLACK]*3)
+
+def rainbow_chase(leds, length = None):
+    return gen_show(leds, rainbow(len(leds))) if length == None else gen_show(leds, rainbow(length)) 
+
+def rainbow_fade(leds):
+    return gen_show(leds, replicate(rainbow(60), len(leds)), len(leds))
+
+def color_wave(leds, color):
+    return gen_show(l_vendor_bottom, replicate(wave(color, 60), len(l_vendor_bottom)), len(l_vendor_bottom))
+
+def color_flash(leds, color):
+    return gen_show(leds, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(leds)), len(leds))
+
 l_vendor_bottom = find_leds("l_vendor_bottom")
-write_show("vendor_bottom_chase_red", gen_show(l_vendor_bottom, [RED, BLACK, BLACK]))
-write_show("vendor_bottom_lighthouse_halcon", gen_show(l_vendor_bottom, [darker(GREEN), GREEN, darker(GREEN)] + [BLACK]*3 + [darker(MAGENTA), MAGENTA, darker(MAGENTA)] + [BLACK]*3))
-write_show("vendor_bottom_chase_rainbow", gen_show(l_vendor_bottom, rainbow(len(l_vendor_bottom))))
-write_show("vendor_bottom_fade_rainbow", gen_show(l_vendor_bottom, replicate(rainbow(60), len(l_vendor_bottom)), len(l_vendor_bottom)))
-write_show("vendor_bottom_wave_red", gen_show(l_vendor_bottom, replicate(wave(RED, 60), len(l_vendor_bottom)), len(l_vendor_bottom)))
+write_show("vendor_bottom_chase_red", color_chase(l_vendor_bottom, RED))
+write_show("vendor_bottom_lighthouse_halcon", halcon_lighthouse(l_vendor_bottom))
+write_show("vendor_bottom_chase_rainbow", rainbow_chase(l_vendor_bottom))
+write_show("vendor_bottom_fade_rainbow", rainbow_fade(l_vendor_bottom))
+write_show("vendor_bottom_wave_red", color_wave(l_vendor_bottom, RED))
 
 l_vendor_left = find_leds("l_vendor_left")
-write_show("vendor_left_chase_red", gen_show(l_vendor_left, [RED, BLACK, BLACK]))
-write_show("vendor_left_lighthouse_halcon", gen_show(l_vendor_left, [darker(GREEN), GREEN, darker(GREEN)] + [BLACK]*3 + [darker(MAGENTA), MAGENTA, darker(MAGENTA)] + [BLACK]*3))
-write_show("vendor_left_chase_rainbow", gen_show(l_vendor_left, rainbow(len(l_vendor_left))))
-write_show("vendor_left_fade_rainbow", gen_show(l_vendor_left, replicate(rainbow(60), len(l_vendor_left)), len(l_vendor_left)))
-write_show("vendor_left_wave_red", gen_show(l_vendor_left, replicate(wave(RED, 60), len(l_vendor_left)), len(l_vendor_left)))
+write_show("vendor_left_chase_red", color_chase(l_vendor_left, RED))
+write_show("vendor_left_lighthouse_halcon", halcon_lighthouse(l_vendor_left))
+write_show("vendor_left_chase_rainbow", rainbow_chase(l_vendor_left))
+write_show("vendor_left_fade_rainbow", rainbow_fade(l_vendor_left))
+write_show("vendor_left_wave_red", color_wave(l_vendor_left, RED))
 
 l_photos_arrow = find_leds("l_photos_arrow")
-write_show("photos_arrow_chase_red", gen_show(l_photos_arrow, [RED, darker(RED)] + [BLACK]*22))
-write_show("photos_arrow_chase_rainbow", gen_show(l_photos_arrow, rainbow(30)))
-write_show("photos_arrow_flash_white", gen_show(l_photos_arrow, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_photos_arrow)), len(l_photos_arrow)))
+write_show("photos_arrow_chase_red", color_chase(l_photos_arrow, RED, 22))
+write_show("photos_arrow_chase_rainbow", rainbow_chase(l_photos_arrow, 30))
+write_show("photos_arrow_flash_white", color_flash(l_photos_arrow, WHITE))
 
 l_spinner_arrow = find_leds("l_spinner_arrow")
-write_show("spinner_arrow_chase_red", gen_show(l_spinner_arrow, [RED, darker(RED)] + [BLACK]*22))
-write_show("spinner_arrow_chase_rainbow", gen_show(l_spinner_arrow, rainbow(30)))
-write_show("spinner_arrow_flash_white", gen_show(l_spinner_arrow, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_spinner_arrow)), len(l_spinner_arrow)))
+write_show("spinner_arrow_chase_red", color_chase(l_spinner_arrow, RED, 22))
+write_show("spinner_arrow_chase_rainbow", rainbow_chase(l_spinner_arrow, 30))
+write_show("spinner_arrow_flash_white", color_flash(l_spinner_arrow, WHITE))
 
 l_left_kickout_arrow = find_leds("l_left_kickout_arrow")
-write_show("left_kickout_arrow_chase_red", gen_show(l_left_kickout_arrow, [RED, darker(RED)] + [BLACK]*22))
-write_show("left_kickout_arrow_chase_rainbow", gen_show(l_left_kickout_arrow, rainbow(30)))
-write_show("left_kickout_arrow_flash_white", gen_show(l_left_kickout_arrow, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_left_kickout_arrow)), len(l_left_kickout_arrow)))
+write_show("left_kickout_arrow_chase_red", color_chase(l_left_kickout_arrow, RED, 22))
+write_show("left_kickout_arrow_chase_rainbow", rainbow_chase(l_left_kickout_arrow, 30))
+write_show("left_kickout_arrow_flash_white", color_flash(l_left_kickout_arrow, WHITE))
 
 l_right_kickout_arrow = find_leds("l_right_kickout_arrow")
-write_show("right_kickout_arrow_chase_red", gen_show(l_right_kickout_arrow, [RED, darker(RED)] + [BLACK]*22))
-write_show("right_kickout_arrow_chase_rainbow", gen_show(l_right_kickout_arrow, rainbow(30)))
-write_show("right_kickout_arrow_flash_white", gen_show(l_right_kickout_arrow, replicate([WHITE, darker(WHITE), BLACK]*2 + [BLACK]*22, len(l_right_kickout_arrow)), len(l_right_kickout_arrow)))
-
-
+write_show("right_kickout_arrow_chase_red", color_chase(l_right_kickout_arrow, RED, 22))
+write_show("right_kickout_arrow_chase_rainbow", rainbow_chase(l_right_kickout_arrow, 30))
+write_show("right_kickout_arrow_flash_white", color_flash(l_right_kickout_arrow, WHITE))
