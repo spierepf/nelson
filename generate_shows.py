@@ -202,25 +202,55 @@ def rotate(l,n):
 def gen_show(leds, pattern, step = 1):
     frames = []
     for i in range(len(pattern)//step):
-        frames.append(gen_frame(leds, rotate(pattern, -i * step)))
+        frames.append(gen_frame(leds, rotate(pattern, i * step)))
     return frames
 
 def write_show(name, show):
     with open('shows/'+name+'.yaml', 'w') as outfile:
         outfile.write(yaml.dump(show))
 
-def color_flash(leds, color_name):
-    color = COLORS[color_name]
-    return gen_show(leds, replicate([color, darker(color), COLORS['black']]*2 + [COLORS['black']]*22, len(leds)), len(leds))
 
 '''*************************************************************************************************'''
 
-class Show(object):
-    def __init__(self, leds_name):
+class LedsIterator(object):
+    def __init__(self, leds):
+        self.leds = leds
+        self.i = 0
+        
+    def next(self):
+        if self.i >= len(self.leds):
+            raise StopIteration
+        else:
+            retval = self.leds[self.i]
+            self.i += 1
+            return retval
+        
+class Leds(object):
+    def __init__(self, leds_name, start_index=None, end_index=None):
         self.leds_name = leds_name
+        self.leds = find_leds("l_"+self.leds_name)
+        if end_index != None:
+            self.leds = self.leds[:end_index]
+        if start_index != None:
+            self.leds = self.leds[start_index:]
+
+    def __str__(self):
+        return self.leds_name            
     
-    def leds(self):
-        return find_leds("l_"+self.leds_name)
+    def __len__(self):
+        return len(self.leds)
+        
+    def __iter__(self):
+        return LedsIterator(self)
+    
+    def __getitem__(self, key):
+        return self.leds[key % len(self.leds)]
+        
+'''*************************************************************************************************'''
+
+class Show(object):
+    def __init__(self, leds):
+        self.leds = leds
         
     def write(self):
         write_show(self.name(), self.show()) 
@@ -235,10 +265,10 @@ class ColorChase(Show):
 
     def show(self):
         color = COLORS[self.color_name]
-        return gen_show(self.leds(), [color, darker(color)] + [COLORS['black']]*self.black_length)
+        return gen_show(self.leds, [color, darker(color)] + [COLORS['black']]*self.black_length)
     
     def name(self):
-        return self.leds_name + "_chase_" + self.color_name
+        return str(self.leds) + "_chase_" + self.color_name
 
 '''*************************************************************************************************'''
 
@@ -247,23 +277,23 @@ class LighthouseHalcon(Show):
         super(LighthouseHalcon, self).__init__(leds_name)
 
     def show(self):
-        return gen_show(self.leds(), [darker(COLORS['green']), COLORS['green'], darker(COLORS['green'])] + [COLORS['black']]*3 + [darker(COLORS['magenta']), COLORS['magenta'], darker(COLORS['magenta'])] + [COLORS['black']]*3)
+        return gen_show(self.leds, [darker(COLORS['green']), COLORS['green'], darker(COLORS['green'])] + [COLORS['black']]*3 + [darker(COLORS['magenta']), COLORS['magenta'], darker(COLORS['magenta'])] + [COLORS['black']]*3)
     
     def name(self):
-        return self.leds_name + "_lighthouse_halcon"
+        return str(self.leds) + "_lighthouse_halcon"
 
 '''*************************************************************************************************'''
 
 class RainbowChase(Show):
     def __init__(self, leds_name, length=None):
         super(RainbowChase, self).__init__(leds_name)
-        self.length = len(self.leds()) if length==None else length
+        self.length = len(self.leds) if length==None else length
 
     def show(self):
-        return gen_show(self.leds(), rainbow(self.length)) 
+        return gen_show(self.leds, rainbow(self.length)) 
     
     def name(self):
-        return self.leds_name + "_chase_rainbow"
+        return str(self.leds) + "_chase_rainbow"
 
 '''*************************************************************************************************'''
 
@@ -273,10 +303,10 @@ class RainbowFade(Show):
         self.length = length
 
     def show(self):
-        return gen_show(self.leds(), replicate(rainbow(self.length), len(self.leds())), len(self.leds()))
+        return gen_show(self.leds, replicate(rainbow(self.length), len(self.leds)), len(self.leds))
     
     def name(self):
-        return self.leds_name + "_fade_rainbow"
+        return str(self.leds) + "_fade_rainbow"
 
 '''*************************************************************************************************'''
 
@@ -288,10 +318,10 @@ class ColorWave(Show):
 
     def show(self):
         color = COLORS[self.color_name]
-    	return gen_show(self.leds(), replicate(wave(color, self.length), len(self.leds())), len(self.leds()))
+    	return gen_show(self.leds, replicate(wave(color, self.length), len(self.leds)), len(self.leds))
     
     def name(self):
-        return self.leds_name + "_wave_" + self.color_name
+        return str(self.leds) + "_wave_" + self.color_name
 
 '''*************************************************************************************************'''
 
@@ -302,21 +332,25 @@ class ColorFlash(Show):
 
     def show(self):
         color = COLORS[self.color_name]
-        return gen_show(self.leds(), replicate([color, darker(color), COLORS['black']]*2 + [COLORS['black']]*22, len(self.leds())), len(self.leds()))
+        return gen_show(self.leds, replicate([color, darker(color), COLORS['black']]*2 + [COLORS['black']]*22, len(self.leds)), len(self.leds))
     
     def name(self):
-        return self.leds_name + "_wave_" + self.color_name
+        return str(self.leds) + "_flash_" + self.color_name
 
 '''*************************************************************************************************'''
 
 for leds_name in ["vendor_left", "vendor_right", "vendor_bottom"]:
-	ColorChase(leds_name, "red").write()
-	LighthouseHalcon(leds_name).write()
-	RainbowChase(leds_name).write()
-	RainbowFade(leds_name).write()
-	ColorWave(leds_name, "red").write()
+	ColorChase(Leds(leds_name), "red").write()
+	LighthouseHalcon(Leds(leds_name)).write()
+	RainbowChase(Leds(leds_name)).write()
+	RainbowFade(Leds(leds_name)).write()
+	ColorWave(Leds(leds_name), "red").write()
 
 for leds_name in ["photos_arrow", "spinner_arrow", "left_kickout_arrow", "right_kickout_arrow"]:
-	ColorChase(leds_name, "red", 22).write()
-	RainbowChase(leds_name, 30).write()
-	ColorFlash(leds_name, "white").write()
+	ColorChase(Leds(leds_name), "red", 22).write()
+	RainbowChase(Leds(leds_name), 30).write()
+	ColorFlash(Leds(leds_name), "white").write()
+
+for leds_name in ["xp_multiplier_2", "xp_multiplier_3", "xp_multiplier_5"]:
+    RainbowChase(Leds(leds_name, 1)).write()
+    ColorWave(Leds(leds_name), "red").write()
