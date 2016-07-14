@@ -44,19 +44,19 @@ leds:
     l_admissions_2: { number: 25 }
     l_admissions_3: { number: 26 }
     
-    l_main_stage_a: { number: 27 }
-    l_main_stage_b: { number: 28 }
-    l_main_stage_c: { number: 29 }
-    l_main_stage_d: { number: 30 }
-    l_main_stage_e: { number: 31 }
-    l_main_stage_f: { number: 32 }
-    l_main_stage_g: { number: 33 }
-    l_main_stage_h: { number: 34 }
-    l_main_stage_i: { number: 35 }
-    l_main_stage_j: { number: 36 }
-    l_main_stage_k: { number: 37 }
-    l_main_stage_l: { number: 38 }
-    l_main_stage_m: { number: 39 }
+    l_main_stage_edge_a: { number: 27 }
+    l_main_stage_edge_b: { number: 28 }
+    l_main_stage_edge_c: { number: 29 }
+    l_main_stage_edge_d: { number: 30 }
+    l_main_stage_edge_e: { number: 31 }
+    l_main_stage_edge_f: { number: 32 }
+    l_main_stage_edge_g: { number: 33 }
+    l_main_stage_edge_h: { number: 34 }
+    l_main_stage_edge_i: { number: 35 }
+    l_main_stage_edge_j: { number: 36 }
+    l_main_stage_edge_k: { number: 37 }
+    l_main_stage_edge_l: { number: 38 }
+    l_main_stage_edge_m: { number: 39 }
     
     l_main_stage_arrow_0_a: { number: 511 }
     l_main_stage_arrow_0_b: { number: 511 }

@@ -354,3 +354,8 @@ for leds_name in ["photos_arrow", "spinner_arrow", "left_kickout_arrow", "right_
 for leds_name in ["xp_multiplier_2", "xp_multiplier_3", "xp_multiplier_5"]:
     RainbowChase(Leds(leds_name, 1)).write()
     ColorWave(Leds(leds_name), "red").write()
+
+for leds_name in ["admissions", "gaming_drop_target", "cosplay_drop_target"]:
+	pass
+
+RainbowChase(Leds("main_stage_edge")).write()
