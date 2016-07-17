@@ -202,7 +202,7 @@ def rotate(l,n):
 def gen_show(leds, pattern, step = 1):
     frames = []
     for i in range(len(pattern)//step):
-        frames.append(gen_frame(leds, rotate(pattern, i * step)))
+        frames.append(gen_frame(leds, rotate(pattern, -i * step)))
     return frames
 
 def write_show(name, show):
@@ -258,14 +258,15 @@ class Show(object):
 '''*************************************************************************************************'''
 
 class ColorChase(Show):
-    def __init__(self, leds_name, color_name, black_length = 1):
+    def __init__(self, leds_name, color_name, back_length = 1, back_color_name = 'black'):
         super(ColorChase, self).__init__(leds_name)
         self.color_name = color_name
-        self.black_length = black_length
+        self.back_length = back_length
+        self.back_color_name = back_color_name
 
     def show(self):
         color = COLORS[self.color_name]
-        return gen_show(self.leds, [color, darker(color)] + [COLORS['black']]*self.black_length)
+        return gen_show(self.leds, [color] + [COLORS[self.back_color_name]]*self.back_length)
     
     def name(self):
         return str(self.leds) + "_chase_" + self.color_name
@@ -294,6 +295,19 @@ class RainbowChase(Show):
     
     def name(self):
         return str(self.leds) + "_chase_rainbow"
+
+'''*************************************************************************************************'''
+
+class RainbowChaseCCW(Show):
+    def __init__(self, leds_name, length=None):
+        super(RainbowChaseCCW, self).__init__(leds_name)
+        self.length = len(self.leds) if length==None else length
+
+    def show(self):
+        return gen_show(self.leds, rainbow(self.length), -1) 
+    
+    def name(self):
+        return str(self.leds) + "_chase_ccw_rainbow"
 
 '''*************************************************************************************************'''
 
@@ -353,9 +367,12 @@ for leds_name in ["photos_arrow", "spinner_arrow", "left_kickout_arrow", "right_
 
 for leds_name in ["xp_multiplier_2", "xp_multiplier_3", "xp_multiplier_5"]:
     RainbowChase(Leds(leds_name, 1)).write()
-    ColorWave(Leds(leds_name), "red").write()
+    RainbowChaseCCW(Leds(leds_name, 1)).write()
+    RainbowFade(Leds(leds_name)).write()
 
 for leds_name in ["admissions", "gaming_drop_target", "cosplay_drop_target"]:
-	pass
+    ColorChase(Leds(leds_name), "blue", 2, "gray").write()
+    ColorChase(Leds(leds_name), "green", 2, "gray").write()
+    ColorChase(Leds(leds_name), "magenta", 2, "gray").write()
 
 RainbowChase(Leds("main_stage_edge")).write()
