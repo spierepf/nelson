@@ -1,62 +1,62 @@
 #config_version=3
 
 leds:
-    l_vendor_bottom_a: { number: 0 }
-    l_vendor_bottom_b: { number: 1 }
-    l_vendor_bottom_c: { number: 2 }
-    l_vendor_bottom_d: { number: 3 }
-    l_vendor_bottom_e: { number: 4 }
-    l_vendor_bottom_f: { number: 5 }
-    l_vendor_bottom_g: { number: 6 }
-    l_vendor_bottom_h: { number: 7 }
-    l_vendor_bottom_i: { number: 8 }
-    l_vendor_bottom_j: { number: 9 }
-    l_vendor_bottom_k: { number: 10 }
-    l_vendor_bottom_l: { number: 11 }
+    l_vendor_right_a: { number: 0 }
+    l_vendor_right_b: { number: 1 }
+    l_vendor_right_c: { number: 2 }
+    l_vendor_right_d: { number: 3 }
+    l_vendor_right_e: { number: 4 }
+    l_vendor_right_f: { number: 5 }
+    l_vendor_right_g: { number: 6 }
+    l_vendor_right_h: { number: 7 }
+    l_vendor_right_i: { number: 8 }
+    l_vendor_right_j: { number: 9 }
+    l_vendor_right_k: { number: 10 }
+    l_vendor_right_l: { number: 11 }
     
-    l_vendor_left_a: { number: 12 }
-    l_vendor_left_b: { number: 13 }
-    l_vendor_left_c: { number: 14 }
-    l_vendor_left_d: { number: 15 }
-    l_vendor_left_e: { number: 16 }
-    l_vendor_left_f: { number: 17 }
-    l_vendor_left_g: { number: 18 }
-    l_vendor_left_h: { number: 19 }
-    l_vendor_left_i: { number: 20 }
-    l_vendor_left_j: { number: 21 }
-    l_vendor_left_k: { number: 22 }
-    l_vendor_left_l: { number: 23 }
+    l_vendor_bottom_a: { number: 12 }
+    l_vendor_bottom_b: { number: 13 }
+    l_vendor_bottom_c: { number: 14 }
+    l_vendor_bottom_d: { number: 15 }
+    l_vendor_bottom_e: { number: 16 }
+    l_vendor_bottom_f: { number: 17 }
+    l_vendor_bottom_g: { number: 18 }
+    l_vendor_bottom_h: { number: 19 }
+    l_vendor_bottom_i: { number: 20 }
+    l_vendor_bottom_j: { number: 21 }
+    l_vendor_bottom_k: { number: 22 }
+    l_vendor_bottom_l: { number: 23 }
     
-    l_vendor_right_a: { number: 511 }
-    l_vendor_right_b: { number: 511 }
-    l_vendor_right_c: { number: 511 }
-    l_vendor_right_d: { number: 511 }
-    l_vendor_right_e: { number: 511 }
-    l_vendor_right_f: { number: 511 }
-    l_vendor_right_g: { number: 511 }
-    l_vendor_right_h: { number: 511 }
-    l_vendor_right_i: { number: 511 }
-    l_vendor_right_j: { number: 511 }
-    l_vendor_right_k: { number: 511 }
-    l_vendor_right_l: { number: 511 }
+    l_vendor_left_a: { number: 24 }
+    l_vendor_left_b: { number: 25 }
+    l_vendor_left_c: { number: 26 }
+    l_vendor_left_d: { number: 27 }
+    l_vendor_left_e: { number: 28 }
+    l_vendor_left_f: { number: 29 }
+    l_vendor_left_g: { number: 30 }
+    l_vendor_left_h: { number: 31 }
+    l_vendor_left_i: { number: 32 }
+    l_vendor_left_j: { number: 33 }
+    l_vendor_left_k: { number: 34 }
+    l_vendor_left_l: { number: 35 }
     
-    l_admissions_1: { number: 24 }
-    l_admissions_2: { number: 25 }
-    l_admissions_3: { number: 26 }
+    l_admissions_1: { number: 36 }
+    l_admissions_2: { number: 37 }
+    l_admissions_3: { number: 38 }
     
-    l_main_stage_edge_a: { number: 27 }
-    l_main_stage_edge_b: { number: 28 }
-    l_main_stage_edge_c: { number: 29 }
-    l_main_stage_edge_d: { number: 30 }
-    l_main_stage_edge_e: { number: 31 }
-    l_main_stage_edge_f: { number: 32 }
-    l_main_stage_edge_g: { number: 33 }
-    l_main_stage_edge_h: { number: 34 }
-    l_main_stage_edge_i: { number: 35 }
-    l_main_stage_edge_j: { number: 36 }
-    l_main_stage_edge_k: { number: 37 }
-    l_main_stage_edge_l: { number: 38 }
-    l_main_stage_edge_m: { number: 39 }
+    l_main_stage_edge_a: { number: 39 }
+    l_main_stage_edge_b: { number: 34 }
+    l_main_stage_edge_c: { number: 41 }
+    l_main_stage_edge_d: { number: 42 }
+    l_main_stage_edge_e: { number: 43 }
+    l_main_stage_edge_f: { number: 44 }
+    l_main_stage_edge_g: { number: 45 }
+    l_main_stage_edge_h: { number: 46 }
+    l_main_stage_edge_i: { number: 47 }
+    l_main_stage_edge_j: { number: 48 }
+    l_main_stage_edge_k: { number: 49 }
+    l_main_stage_edge_l: { number: 50 }
+    l_main_stage_edge_m: { number: 51 }
     
     l_main_stage_arrow_0_a: { number: 511 }
     l_main_stage_arrow_0_b: { number: 511 }
