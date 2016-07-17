@@ -3,72 +3,70 @@ import yaml
 import collections
 import math
 
-COLORS = {}
-
 """
  * The color white.  In the default sRGB space.
 """
-COLORS['white']     = (255, 255, 255);
+WHITE     = (255, 255, 255);
 
 """
  * The color light gray.  In the default sRGB space.
 """
-COLORS['lightgray'] = (192, 192, 192);
+LIGHTGRAY = (192, 192, 192);
 
 """
  * The color gray.  In the default sRGB space.
 """
-COLORS['gray']      = (128, 128, 128);
+GRAY      = (128, 128, 128);
 
 """
  * The color dark gray.  In the default sRGB space.
 """
-COLORS['darkgray']  = (64, 64, 64);
+DARKGRAY  = (64, 64, 64);
 
 """
  * The color black.  In the default sRGB space.
 """
-COLORS['black']     = (0, 0, 0);
+BLACK     = (0, 0, 0);
 
 """
  * The color red.  In the default sRGB space.
 """
-COLORS['red']       = (255, 0, 0);
+RED       = (255, 0, 0);
 
 """
  * The color pink.  In the default sRGB space.
 """
-COLORS['pink']      = (255, 175, 175);
+PINK      = (255, 175, 175);
 
 """
  * The color orange.  In the default sRGB space.
 """
-COLORS['oragne']    = (255, 200, 0);
+ORANGE    = (255, 200, 0);
 
 """
  * The color yellow.  In the default sRGB space.
 """
-COLORS['yellow']    = (255, 255, 0);
+YELLOW    = (255, 255, 0);
 
 """
  * The color green.  In the default sRGB space.
 """
-COLORS['green']     = (0, 255, 0);
+GREEN     = (0, 255, 0);
 
 """
  * The color magenta.  In the default sRGB space.
 """
-COLORS['magenta']   = (255, 0, 255);
+MAGENTA   = (255, 0, 255);
 
 """
  * The color cyan.  In the default sRGB space.
 """
-COLORS['cyan']      = (0, 255, 255);
+CYAN      = (0, 255, 255);
 
 """
  * The color blue.  In the default sRGB space.
 """
-COLORS['blue']      = (0, 0, 255);
+BLUE      = (0, 0, 255);
 
 with open('config/lights.yaml', 'r') as f:
     LEDS = yaml.load(f)["leds"]
@@ -229,13 +227,15 @@ class Leds(object):
     def __init__(self, leds_name, start_index=None, end_index=None):
         self.leds_name = leds_name
         self.leds = find_leds("l_"+self.leds_name)
-        if end_index != None:
+        self.start_index = start_index
+        self.end_index = end_index
+        if self.end_index != None:
             self.leds = self.leds[:end_index]
-        if start_index != None:
+        if self.start_index != None:
             self.leds = self.leds[start_index:]
 
     def __str__(self):
-        return self.leds_name            
+        return self.leds_name           
     
     def __len__(self):
         return len(self.leds)
@@ -245,7 +245,12 @@ class Leds(object):
     
     def __getitem__(self, key):
         return self.leds[key % len(self.leds)]
-        
+    
+    def reverse(self):
+        retval = Leds(self.leds_name, self.start_index, self.end_index)
+        retval.leds = list(reversed(retval.leds))
+        return retval
+
 '''*************************************************************************************************'''
 
 class Show(object):
@@ -257,63 +262,35 @@ class Show(object):
 
 '''*************************************************************************************************'''
 
-class ColorChase(Show):
-    def __init__(self, leds_name, color_name, back_length = 1, back_color_name = 'black'):
-        super(ColorChase, self).__init__(leds_name)
-        self.color_name = color_name
-        self.back_length = back_length
-        self.back_color_name = back_color_name
+class Chase(Show):
+    def __init__(self, leds, suffix, colors):
+        super(Chase, self).__init__(leds)
+        self.suffix = suffix
+        self.colors = colors
 
     def show(self):
-        color = COLORS[self.color_name]
-        return gen_show(self.leds, [color] + [COLORS[self.back_color_name]]*self.back_length)
+        return gen_show(self.leds, self.colors)
     
     def name(self):
-        return str(self.leds) + "_chase_" + self.color_name
+        return str(self.leds) + "_chase_" + self.suffix
 
 '''*************************************************************************************************'''
 
-class LighthouseHalcon(Show):
-    def __init__(self, leds_name):
-        super(LighthouseHalcon, self).__init__(leds_name)
-
-    def show(self):
-        return gen_show(self.leds, [darker(COLORS['green']), COLORS['green'], darker(COLORS['green'])] + [COLORS['black']]*3 + [darker(COLORS['magenta']), COLORS['magenta'], darker(COLORS['magenta'])] + [COLORS['black']]*3)
-    
-    def name(self):
-        return str(self.leds) + "_lighthouse_halcon"
+class RainbowChase(Chase):
+    def __init__(self, leds, length=None):
+        super(RainbowChase, self).__init__(leds, 'rainbow', rainbow(len(leds) if length==None else length))
 
 '''*************************************************************************************************'''
 
-class RainbowChase(Show):
-    def __init__(self, leds_name, length=None):
-        super(RainbowChase, self).__init__(leds_name)
-        self.length = len(self.leds) if length==None else length
-
-    def show(self):
-        return gen_show(self.leds, rainbow(self.length)) 
-    
-    def name(self):
-        return str(self.leds) + "_chase_rainbow"
-
-'''*************************************************************************************************'''
-
-class RainbowChaseCCW(Show):
-    def __init__(self, leds_name, length=None):
-        super(RainbowChaseCCW, self).__init__(leds_name)
-        self.length = len(self.leds) if length==None else length
-
-    def show(self):
-        return gen_show(self.leds, rainbow(self.length), -1) 
-    
-    def name(self):
-        return str(self.leds) + "_chase_ccw_rainbow"
+class RainbowChaseCCW(Chase):
+    def __init__(self, leds, length=None):
+        super(RainbowChaseCCW, self).__init__(leds.reverse(), 'rainbow_ccw', rainbow(len(leds) if length==None else length))
 
 '''*************************************************************************************************'''
 
 class RainbowFade(Show):
-    def __init__(self, leds_name, length=60):
-        super(RainbowFade, self).__init__(leds_name)
+    def __init__(self, leds, length=60):
+        super(RainbowFade, self).__init__(leds)
         self.length = length
 
     def show(self):
@@ -325,8 +302,8 @@ class RainbowFade(Show):
 '''*************************************************************************************************'''
 
 class ColorWave(Show):
-    def __init__(self, leds_name, color_name, length=60):
-        super(ColorWave, self).__init__(leds_name)
+    def __init__(self, leds, color_name, length=60):
+        super(ColorWave, self).__init__(leds)
         self.color_name = color_name
         self.length = length
 
@@ -340,8 +317,8 @@ class ColorWave(Show):
 '''*************************************************************************************************'''
 
 class ColorFlash(Show):
-    def __init__(self, leds_name, color_name):
-        super(ColorFlash, self).__init__(leds_name)
+    def __init__(self, leds, color_name):
+        super(ColorFlash, self).__init__(leds)
         self.color_name = color_name
 
     def show(self):
@@ -353,26 +330,25 @@ class ColorFlash(Show):
 
 '''*************************************************************************************************'''
 
-for leds_name in ["vendor_left", "vendor_right", "vendor_bottom"]:
-	ColorChase(Leds(leds_name), "red").write()
-	LighthouseHalcon(Leds(leds_name)).write()
-	RainbowChase(Leds(leds_name)).write()
-	RainbowFade(Leds(leds_name)).write()
-	ColorWave(Leds(leds_name), "red").write()
+for leds in ["vendor_left", "vendor_right", "vendor_bottom"]:
+	Chase(Leds(leds), 'red', [RED, BLACK, BLACK]).write()
+	RainbowChase(Leds(leds)).write()
+	# RainbowFade(Leds(leds)).write()
+	# ColorWave(Leds(leds), "red").write()
 
-for leds_name in ["photos_arrow", "spinner_arrow", "left_kickout_arrow", "right_kickout_arrow"]:
-	ColorChase(Leds(leds_name), "red", 22).write()
-	RainbowChase(Leds(leds_name), 30).write()
-	ColorFlash(Leds(leds_name), "white").write()
+for leds in ["photos_arrow", "spinner_arrow", "left_kickout_arrow", "right_kickout_arrow"]:
+	Chase(Leds(leds), 'red', [RED] + 22*[BLACK]).write()
+	RainbowChase(Leds(leds), 30).write()
+	# ColorFlash(Leds(leds), "white").write()
 
-for leds_name in ["xp_multiplier_2", "xp_multiplier_3", "xp_multiplier_5"]:
-    RainbowChase(Leds(leds_name, 1)).write()
-    RainbowChaseCCW(Leds(leds_name, 1)).write()
-    RainbowFade(Leds(leds_name)).write()
+for leds in ["xp_multiplier_2", "xp_multiplier_3", "xp_multiplier_5"]:
+    RainbowChase(Leds(leds, 1)).write()
+    RainbowChaseCCW(Leds(leds, 1)).write()
+    # RainbowFade(Leds(leds)).write()
 
-for leds_name in ["admissions", "gaming_drop_target", "cosplay_drop_target"]:
-    ColorChase(Leds(leds_name), "blue", 2, "gray").write()
-    ColorChase(Leds(leds_name), "green", 2, "gray").write()
-    ColorChase(Leds(leds_name), "magenta", 2, "gray").write()
+for leds in ["admissions", "gaming_drop_target", "cosplay_drop_target"]:
+    Chase(Leds(leds), 'blue', [BLUE, GRAY, GRAY]).write()
+    Chase(Leds(leds), 'green', [GREEN, GRAY, GRAY]).write()
+    Chase(Leds(leds), 'magenta', [MAGENTA, GRAY, GRAY]).write()
 
 RainbowChase(Leds("main_stage_edge")).write()

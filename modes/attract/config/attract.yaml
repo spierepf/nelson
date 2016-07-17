@@ -8,9 +8,11 @@ show_player:
 
 light_player:
     mode_attract_started:
-      - show: vendor_bottom_fade_rainbow
-        repeat: yes
       - show: vendor_left_fade_rainbow
+        repeat: yes
+      - show: vendor_right_fade_rainbow
+        repeat: yes
+      - show: vendor_bottom_fade_rainbow
         repeat: yes
       - show: photos_arrow_chase_rainbow
         repeat: yes
