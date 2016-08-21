@@ -2,4 +2,29 @@
 
 mode:
   start_events: cosplay_selected
+  stop_events: cosplay_kickout_hit_me_active_hit
   priority: 100
+  code: cosplay.Cosplay
+
+shot_profiles:
+  hit_me:
+    states:
+      - name: active
+        light_script: flash_green
+      - name: complete
+        light_script: on_green
+
+shots:
+  cosplay_drop_1:
+    profile: hit_me
+    reset_events: mode_cosplay_stopping
+  cosplay_drop_2:
+    profile: hit_me
+    reset_events: mode_cosplay_stopping
+  cosplay_drop_3:
+    profile: hit_me
+    reset_events: mode_cosplay_stopping
+  cosplay_kickout:
+    profile: hit_me
+    enable_events: cosplayDrops_hit_me_complete_complete
+    reset_events: mode_cosplay_stopping
