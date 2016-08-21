@@ -10,6 +10,7 @@ config:
     - lights.yaml
     - shots.yaml
     - modes.yaml
+    - light_scripts.yaml
 
 fonts:
     weltron:

@@ -1,0 +1,11 @@
+# config_version=3
+
+light_scripts:
+  flash_green:
+    - tocks: 1
+      color: 00ff00
+    - tocks: 1
+      color: 000000
+  on_green:
+    - tocks: 1
+      color: 00ff00
