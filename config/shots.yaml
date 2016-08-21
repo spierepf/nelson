@@ -1,16 +1,31 @@
 #config_version=3
 
 shots:
-    upperLane_1:
-        switch: s_upperLane_1
-        led: l_admissions_1
-    upperLane_2:
-        switch: s_upperLane_2
-        led: l_admissions_2
-    upperLane_3:
-        switch: s_upperLane_3
-        led: l_admissions_3
+  upperLane_1:
+    switch: s_upperLane_1
+    led: l_admissions_1
+  upperLane_2:
+    switch: s_upperLane_2
+    led: l_admissions_2
+  upperLane_3:
+    switch: s_upperLane_3
+    led: l_admissions_3
+  cosplay_drop_1:
+    switch: s_dropTarget_right_1
+    led: l_cosplay_drop_target_0
+  cosplay_drop_2:
+    switch: s_dropTarget_right_2
+    led: l_cosplay_drop_target_1
+  cosplay_drop_3:
+    switch: s_dropTarget_right_3
+    led: l_cosplay_drop_target_2
+  cosplay_kickout:
+    switch: s_kickout_right
+    led: l_right_kickout_arrow_a, l_right_kickout_arrow_b, l_right_kickout_arrow_c, l_right_kickout_arrow_d, l_right_kickout_arrow_e, l_right_kickout_arrow_f, l_right_kickout_arrow_g, l_right_kickout_arrow_h
 
 shot_groups:
-    upperLanes:
-        shots: upperLane_1, upperLane_2, upperLane_3
+  upperLanes:
+    shots: upperLane_1, upperLane_2, upperLane_3
+  cosplayDrops:
+    shots: cosplay_drop_1, cosplay_drop_2, cosplay_drop_3
+    reset_events: ball_ended
