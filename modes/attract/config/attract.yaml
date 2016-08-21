@@ -8,11 +8,11 @@ show_player:
 
 light_player:
     mode_attract_started:
-      - show: vendor_left_fade_rainbow
+      - show: vendor_left_chase_rainbow
         repeat: yes
-      - show: vendor_right_fade_rainbow
+      - show: vendor_right_chase_rainbow
         repeat: yes
-      - show: vendor_bottom_fade_rainbow
+      - show: vendor_bottom_chase_rainbow
         repeat: yes
       - show: photos_arrow_chase_rainbow
         repeat: yes
@@ -24,7 +24,7 @@ light_player:
         repeat: yes
       - show: xp_multiplier_2_chase_rainbow
         repeat: yes
-      - show: xp_multiplier_3_fade_rainbow
+      - show: xp_multiplier_3_chase_rainbow
         repeat: yes
       - show: xp_multiplier_5_chase_rainbow
         repeat: yes

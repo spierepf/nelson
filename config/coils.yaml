@@ -3,22 +3,18 @@
 coils:
     c_trough_eject:
         pulse_ms: 6
-        number: 5-0
+        number: 5-2
 
     c_flipper_right:
-        number: 5-1
+        number: 21-1
 
     c_flipper_left:
-        number: 5-2
+        number: 21-2
 
     c_drain_eject:
         pulse_ms: 9
         number: 5-3
 
-    c_5_4:
-        number: 5-4
-        pulse_ms: 5
-        
     c_popBumper_bottom:
         pulse_ms: 8
         number: 10-0
@@ -33,23 +29,23 @@ coils:
 
     c_dropTarget_left_reset:
         pulse_ms: 10
-        number: 10-3
+        number: 1-2
 
     c_kickOut_left_eject:
         pulse_ms: 5
-        number: 10-4
+        number: 1-0
 
     c_slingshot_right:
          pulse_ms: 5
-         number: 1-0
+         number: 5-1
 
     c_slingshot_left:
          pulse_ms: 5
-         number: 1-1
+         number: 5-0
 
     c_kickOut_right_eject:
          pulse_ms: 5
-         number: 1-2
+         number: 1-1
 
     c_dropTarget_right_reset:
          pulse_ms: 10
