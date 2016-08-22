@@ -25,3 +25,114 @@ switch_player:
     - time: 1s
       switch: s_plungerLane
       action: deactivate
+
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit

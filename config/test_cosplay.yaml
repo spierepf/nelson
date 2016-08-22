@@ -34,3 +34,9 @@ switch_player:
     - time: 1s
       switch: s_mainStage_entry
       action: hit
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit

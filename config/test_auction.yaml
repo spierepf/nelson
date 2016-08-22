@@ -28,3 +28,36 @@ switch_player:
     - time: 1s
       switch: s_plungerLane
       action: deactivate
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
