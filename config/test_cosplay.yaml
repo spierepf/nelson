@@ -22,3 +22,15 @@ switch_player:
     - time: 1s
       switch: s_plungerLane
       action: deactivate
+    - time: 1s
+      switch: s_dropTarget_right_1
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_2
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_3
+      action: activate
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
