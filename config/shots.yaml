@@ -10,6 +10,89 @@ shots:
   upperLane_3:
     switch: s_upperLane_3
     led: l_admissions_3
+
+  vendor_left:
+    switch: s_popBumper_left
+    led:
+      - l_vendor_left_a
+      - l_vendor_left_b
+      - l_vendor_left_c
+      - l_vendor_left_d
+      - l_vendor_left_e
+      - l_vendor_left_f
+      - l_vendor_left_g
+      - l_vendor_left_h
+      - l_vendor_left_i
+      - l_vendor_left_j
+      - l_vendor_left_k
+      - l_vendor_left_l
+
+  vendor_right:
+    switch: s_popBumper_right
+    led:
+      - l_vendor_right_a
+      - l_vendor_right_b
+      - l_vendor_right_c
+      - l_vendor_right_d
+      - l_vendor_right_e
+      - l_vendor_right_f
+      - l_vendor_right_g
+      - l_vendor_right_h
+      - l_vendor_right_i
+      - l_vendor_right_j
+      - l_vendor_right_k
+      - l_vendor_right_l
+
+  vendor_bottom:
+    switch: s_popBumper_bottom
+    led:
+      - l_vendor_bottom_a
+      - l_vendor_bottom_b
+      - l_vendor_bottom_c
+      - l_vendor_bottom_d
+      - l_vendor_bottom_e
+      - l_vendor_bottom_f
+      - l_vendor_bottom_g
+      - l_vendor_bottom_h
+      - l_vendor_bottom_i
+      - l_vendor_bottom_j
+      - l_vendor_bottom_k
+      - l_vendor_bottom_l
+
+  kickout_left:
+    switch: s_kickout_left
+    led:
+      - l_left_kickout_arrow_a
+      - l_left_kickout_arrow_b
+      - l_left_kickout_arrow_c
+      - l_left_kickout_arrow_d
+      - l_left_kickout_arrow_e
+      - l_left_kickout_arrow_f
+      - l_left_kickout_arrow_g
+      - l_left_kickout_arrow_h
+
+  gaming_drop_1:
+    switch: s_dropTarget_left_1
+    led: l_gaming_drop_target_0
+  gaming_drop_2:
+    switch: s_dropTarget_left_2
+    led: l_gaming_drop_target_1
+  gaming_drop_3:
+    switch: s_dropTarget_left_3
+    led: l_gaming_drop_target_2
+
+  cosplay_kickout:
+    switch: s_kickout_right
+    led:
+      - l_right_kickout_arrow_a
+      - l_right_kickout_arrow_b
+      - l_right_kickout_arrow_c
+      - l_right_kickout_arrow_d
+      - l_right_kickout_arrow_e
+      - l_right_kickout_arrow_f
+      - l_right_kickout_arrow_g
+      - l_right_kickout_arrow_h
+
   cosplay_drop_1:
     switch: s_dropTarget_right_1
     led: l_cosplay_drop_target_0
@@ -19,13 +102,75 @@ shots:
   cosplay_drop_3:
     switch: s_dropTarget_right_3
     led: l_cosplay_drop_target_2
-  cosplay_kickout:
-    switch: s_kickout_right
-    led: l_right_kickout_arrow_a, l_right_kickout_arrow_b, l_right_kickout_arrow_c, l_right_kickout_arrow_d, l_right_kickout_arrow_e, l_right_kickout_arrow_f, l_right_kickout_arrow_g, l_right_kickout_arrow_h
+
+  spinner:
+    switch: s_spinner
+    led:
+      - l_spinner_arrow_a
+      - l_spinner_arrow_b
+      - l_spinner_arrow_c
+      - l_spinner_arrow_d
+      - l_spinner_arrow_e
+      - l_spinner_arrow_f
+      - l_spinner_arrow_g
+      - l_spinner_arrow_h
+
+  photo_drop_1:
+    switch: s_dropTarget_centre_1
+  photo_drop_1:
+    switch: s_dropTarget_centre_2
+  photo_drop_1:
+    switch: s_dropTarget_centre_3
+  photo_fixed:
+    switch: s_fixedTarget_post_inline
+    
+  mainStage:
+    switch: s_mainStage_entry
+    led:
+      - l_main_stage_arrow_0_a
+      - l_main_stage_arrow_0_b
+      - l_main_stage_arrow_0_c
+      - l_main_stage_arrow_0_d
+      - l_main_stage_arrow_0_e
+      - l_main_stage_arrow_0_f
+      - l_main_stage_arrow_0_g
+      - l_main_stage_arrow_0_h
+      - l_main_stage_arrow_1_a
+      - l_main_stage_arrow_1_b
+      - l_main_stage_arrow_1_c
+      - l_main_stage_arrow_1_d
+      - l_main_stage_arrow_1_e
+      - l_main_stage_arrow_1_f
+      - l_main_stage_arrow_1_g
+      - l_main_stage_arrow_1_h
+      - l_main_stage_arrow_2_a
+      - l_main_stage_arrow_2_b
+      - l_main_stage_arrow_2_c
+      - l_main_stage_arrow_2_d
+      - l_main_stage_arrow_2_e
+      - l_main_stage_arrow_2_f
+      - l_main_stage_arrow_2_g
+      - l_main_stage_arrow_2_h
+      - l_main_stage_edge_a
+      - l_main_stage_edge_b
+      - l_main_stage_edge_c
+      - l_main_stage_edge_d
+      - l_main_stage_edge_e
+      - l_main_stage_edge_f
+      - l_main_stage_edge_g
+      - l_main_stage_edge_h
+      - l_main_stage_edge_i
+      - l_main_stage_edge_j
+      - l_main_stage_edge_k
+      - l_main_stage_edge_l
+      - l_main_stage_edge_m
 
 shot_groups:
   upperLanes:
     shots: upperLane_1, upperLane_2, upperLane_3
   cosplayDrops:
     shots: cosplay_drop_1, cosplay_drop_2, cosplay_drop_3
+    reset_events: ball_ended
+  gamingDrops:
+    shots: gaming_drop_1, gaming_drop_2, gaming_drop_3
     reset_events: ball_ended
