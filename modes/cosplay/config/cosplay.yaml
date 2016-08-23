@@ -2,9 +2,8 @@
 
 mode:
   start_events: cosplay_selected
-  stop_events: mainStage_hit_me_active_hit
+  stop_events: mode_cosplay_complete
   priority: 100
-  code: cosplay.Cosplay
 
 shot_profiles:
   hit_me:
@@ -24,7 +23,103 @@ shots:
   cosplay_drop_3:
     profile: hit_me
     reset_events: mode_cosplay_stopping
-  mainStage:
+  mainStage_cosplay_pose_1:
+    switch: s_mainStage_entry
+    led:
+      - l_main_stage_arrow_0_a
+      - l_main_stage_arrow_0_b
+      - l_main_stage_arrow_0_c
+      - l_main_stage_arrow_0_d
+      - l_main_stage_arrow_0_e
+      - l_main_stage_arrow_0_f
+      - l_main_stage_arrow_0_g
+      - l_main_stage_arrow_0_h
+      - l_main_stage_arrow_1_a
+      - l_main_stage_arrow_1_b
+      - l_main_stage_arrow_1_c
+      - l_main_stage_arrow_1_d
+      - l_main_stage_arrow_1_e
+      - l_main_stage_arrow_1_f
+      - l_main_stage_arrow_1_g
+      - l_main_stage_arrow_1_h
+      - l_main_stage_arrow_2_a
+      - l_main_stage_arrow_2_b
+      - l_main_stage_arrow_2_c
+      - l_main_stage_arrow_2_d
+      - l_main_stage_arrow_2_e
+      - l_main_stage_arrow_2_f
+      - l_main_stage_arrow_2_g
+      - l_main_stage_arrow_2_h
     profile: hit_me
     enable_events: cosplayDrops_hit_me_complete_complete
     reset_events: mode_cosplay_stopping
+  mainStage_cosplay_pose_2:
+    switch: s_mainStage_entry
+    led:
+      - l_main_stage_arrow_1_a
+      - l_main_stage_arrow_1_b
+      - l_main_stage_arrow_1_c
+      - l_main_stage_arrow_1_d
+      - l_main_stage_arrow_1_e
+      - l_main_stage_arrow_1_f
+      - l_main_stage_arrow_1_g
+      - l_main_stage_arrow_1_h
+      - l_main_stage_arrow_2_a
+      - l_main_stage_arrow_2_b
+      - l_main_stage_arrow_2_c
+      - l_main_stage_arrow_2_d
+      - l_main_stage_arrow_2_e
+      - l_main_stage_arrow_2_f
+      - l_main_stage_arrow_2_g
+      - l_main_stage_arrow_2_h
+    profile: hit_me
+    enable_events: mainStage_cosplay_pose_1_hit_me_active_hit
+    reset_events: mode_cosplay_stopping
+  mainStage_cosplay_pose_3:
+    switch: s_mainStage_entry
+    led:
+      - l_main_stage_arrow_2_a
+      - l_main_stage_arrow_2_b
+      - l_main_stage_arrow_2_c
+      - l_main_stage_arrow_2_d
+      - l_main_stage_arrow_2_e
+      - l_main_stage_arrow_2_f
+      - l_main_stage_arrow_2_g
+      - l_main_stage_arrow_2_h
+    profile: hit_me
+    enable_events: mainStage_cosplay_pose_2_hit_me_active_hit
+    reset_events: mode_cosplay_stopping
+
+logic_blocks:
+  counters:
+    cosplay_complete:
+      enable_events: mainStage_cosplay_pose_3_hit_me_active_hit
+      count_events: upperLane_1_hit, upperLane_2_hit, upperLane_3_hit
+      starting_count: 1
+      count_complete_value: 0
+      direction: down
+      events_when_complete: mode_cosplay_complete
+      reset_events: mode_cosplay_stopping
+
+slide_player:
+  cosplay_selected:
+    - type: text
+      text: "OH NO! COSPLAY BOTS!"
+      expire: 3s
+  cosplayDrops_hit_me_complete_complete:
+    - type: text
+      text: "TO THE MAIN STAGE!"
+      expire: 3s
+  mainStage_cosplay_pose_1_hit_me_active_hit:
+    - type: text
+      text: "DO IT AGAIN!"
+      expire: 3s
+  mainStage_cosplay_pose_2_hit_me_active_hit:
+    - type: text
+      text: "ONE MORE TIME!"
+      expire: 3s
+  mainStage_cosplay_pose_3_hit_me_active_hit:
+    - type: text
+      text: "YOU DID IT!"
+      size: 10
+      expire: 3s
