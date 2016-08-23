@@ -2,7 +2,7 @@
 
 mode:
   start_events: photos_selected
-  stop_events: timer_mode_stop_timer_complete
+  stop_events: mode_photos_complete
   priority: 100
 
 timers:
@@ -11,6 +11,14 @@ timers:
     control_events:
       - event: s_fixedTarget_post_inline_active
         action: start
+
+logic_blocks:
+  sequences:
+    photos_complete:
+      enable_events: s_fixedTarget_post_inline_active
+      events: timer_mode_stop_timer_complete
+      events_when_complete: mode_photos_complete
+      reset_events: mode_photos_stopping
 
 show_player:
     s_fixedTarget_post_inline_active:
