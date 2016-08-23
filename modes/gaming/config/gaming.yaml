@@ -2,19 +2,56 @@
 
 mode:
   start_events: gaming_selected
-  stop_events: logicblock_gaming_complete
+  stop_events: mode_gaming_complete
   priority: 100
+
+shot_profiles:
+  hit_me:
+    states:
+      - name: active
+        light_script: flash_green
+      - name: complete
+        light_script: on_green
+
+shots:
+  gaming_drop_1:
+    profile: hit_me
+    reset_events: mode_gaming_stopping
+  gaming_drop_2:
+    profile: hit_me
+    reset_events: mode_gaming_stopping
+  gaming_drop_3:
+    profile: hit_me
+    reset_events: mode_gaming_stopping
+  kickout_left:
+    profile: hit_me
+    enable_events: gamingDrops_hit_me_complete_complete
+    reset_events: mode_gaming_stopping
+  cosplay_kickout:
+    profile: hit_me
+    enable_events: gamingDrops_hit_me_complete_complete
+    reset_events: mode_gaming_stopping
+
+shot_groups:
+  cosplay_kickouts:
+    shots: kickout_left, cosplay_kickout
+    enable_events: gamingDrops_hit_me_complete_complete
+    reset_events: mode_gaming_stopping
 
 logic_blocks:
   sequences:
-    gaming:
-      enable_events: mode_gaming_started
-      events:
-        - dropTargetBank_right_down
-        - balldevice_kickout_right_ball_enter
+    gaming_complete:
+      enable_events: gamingDrops_hit_me_complete_complete
+      events: cosplay_kickouts_complete
+      events_when_complete: mode_gaming_complete
+      reset_events: mode_gaming_stopping
 
 slide_player:
-  dropTargetBank_right_down:
+  gaming_selected:
     - type: text
-      text: "NOW GO FOR THE KICKOUT!"
+      text: "GAMING BOTS!"
+      expire: 3s
+  gamingDrops_hit_me_complete_complete:
+    - type: text
+      text: "ROLL THE DICE!"
       expire: 3s

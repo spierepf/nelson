@@ -55,4 +55,3 @@ switch_player:
     - time: 1s
       switch: s_kickOut_left
       action: deactivate
-
