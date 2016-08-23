@@ -2,4 +2,33 @@
 
 mode:
   start_events: vendors_selected
+  stop_events: mode_vendors_complete
   priority: 100
+
+logic_blocks:
+  counters:
+    vendor_left_hits:
+      count_events: vendor_left_hit
+      starting_count: 12
+      count_complete_value: 0
+      direction: down
+      reset_events: mode_vendors_stopping
+    vendor_right_hits:
+      count_events: vendor_right_hit
+      starting_count: 12
+      count_complete_value: 0
+      direction: down
+      reset_events: mode_vendors_stopping
+    vendor_bottom_hits:
+      count_events: vendor_bottom_hit
+      starting_count: 12
+      count_complete_value: 0
+      direction: down
+      reset_events: mode_vendors_stopping
+    vendors_complete:
+      count_events: logicblock_vendor_left_hits_complete, logicblock_vendor_right_hits_complete, logicblock_vendor_bottom_hits_complete
+      starting_count: 3
+      count_complete_value: 0
+      direction: down
+      reset_events: mode_vendors_stopping
+      events_when_complete: mode_vendors_complete
