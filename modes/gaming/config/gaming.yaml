@@ -33,7 +33,7 @@ shots:
     reset_events: mode_gaming_stopping
 
 shot_groups:
-  cosplay_kickouts:
+  gaming_kickouts:
     shots: kickout_left, cosplay_kickout
     enable_events: gamingDrops_hit_me_complete_complete
     reset_events: mode_gaming_stopping
@@ -42,7 +42,7 @@ logic_blocks:
   sequences:
     gaming_complete:
       enable_events: gamingDrops_hit_me_complete_complete
-      events: cosplay_kickouts_complete
+      events: gaming_kickouts_complete
       events_when_complete: mode_gaming_complete
       reset_events: mode_gaming_stopping
 
