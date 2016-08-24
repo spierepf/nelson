@@ -5,10 +5,57 @@ mode:
   stop_events: timer_mode_cooldown_complete
   priority: 100
 
+shot_profiles:
+  hit_me_1:
+    states:
+      - name: active
+        light_script: flash_green
+        tocks_per_sec: 4
+      - name: complete
+        light_script: on_green
+  hit_me_2:
+    states:
+      - name: active
+        light_script: flash_green
+        tocks_per_sec: 6
+      - name: complete
+        light_script: on_green
+  hit_me_3:
+    states:
+      - name: active
+        light_script: flash_green
+        tocks_per_sec: 8
+      - name: complete
+        light_script: on_green
+  hit_me_4:
+    states:
+      - name: active
+        light_script: flash_green
+        tocks_per_sec: 10
+      - name: complete
+        light_script: on_green
+
+shots:
+  photo_drop_1:
+    profile: hit_me_1
+    reset_events: mode_cosplay_stopping
+  photo_drop_2:
+    profile: hit_me_2
+    enable_events: photo_drop_1_hit_me_1_active_hit
+    reset_events: mode_cosplay_stopping
+  photo_drop_3:
+    profile: hit_me_3
+    enable_events: photo_drop_2_hit_me_2_active_hit
+    reset_events: mode_cosplay_stopping
+  photo_fixed:
+    profile: hit_me_4
+    enable_events: photo_drop_3_hit_me_3_active_hit
+    reset_events: mode_cosplay_stopping
+
 logic_blocks:
   sequences:
     photos:
-      events: s_fixedTarget_post_inline_active
+      events: photo_fixed_hit_me_4_active_hit
       reset_events: mode_photos_stopping
 
 timers:

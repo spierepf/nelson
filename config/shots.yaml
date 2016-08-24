@@ -117,13 +117,49 @@ shots:
 
   photo_drop_1:
     switch: s_dropTarget_centre_1
-  photo_drop_1:
+    led:
+      l_photos_arrow_a
+      l_photos_arrow_b
+      l_photos_arrow_c
+      l_photos_arrow_d
+      l_photos_arrow_e
+      l_photos_arrow_f
+      l_photos_arrow_g
+      l_photos_arrow_h
+  photo_drop_2:
     switch: s_dropTarget_centre_2
-  photo_drop_1:
+    led:
+      l_photos_arrow_a
+      l_photos_arrow_b
+      l_photos_arrow_c
+      l_photos_arrow_d
+      l_photos_arrow_e
+      l_photos_arrow_f
+      l_photos_arrow_g
+      l_photos_arrow_h
+  photo_drop_3:
     switch: s_dropTarget_centre_3
+    led:
+      l_photos_arrow_a
+      l_photos_arrow_b
+      l_photos_arrow_c
+      l_photos_arrow_d
+      l_photos_arrow_e
+      l_photos_arrow_f
+      l_photos_arrow_g
+      l_photos_arrow_h
   photo_fixed:
     switch: s_fixedTarget_post_inline
-    
+    led:
+      l_photos_arrow_a
+      l_photos_arrow_b
+      l_photos_arrow_c
+      l_photos_arrow_d
+      l_photos_arrow_e
+      l_photos_arrow_f
+      l_photos_arrow_g
+      l_photos_arrow_h
+
   mainStage:
     switch: s_mainStage_entry
     led:
