@@ -19,22 +19,22 @@ switch_player:
     - time: 100ms
       switch: s_plungerLane
       action: activate
-    - time: 1s
+    - time: 5s
       switch: s_flipper_right
       action: hit
-    - time: 1s
+    - time: 5s
       switch: s_flipper_right
       action: hit
-    - time: 1s
+    - time: 5s
       switch: s_flipper_right
       action: hit
-    - time: 1s
+    - time: 5s
       switch: s_flipper_right
       action: hit
-    - time: 1s
+    - time: 5s
       switch: s_flipper_right
       action: hit
-    - time: 1s
+    - time: 5s
       switch: s_plungerLane
       action: deactivate
     - time: 1s
