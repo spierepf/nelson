@@ -4,7 +4,7 @@ config:
   - config.yaml
 
 switch_player:
-  start_event: machine_reset_phase_3
+  start_event: mode_attract_started
   start_delay: 1s
   steps:
     - time: 100ms
