@@ -2,7 +2,7 @@
 
 mode:
   start_events: gaming_selected
-  stop_events: mode_gaming_complete
+  stop_events: timer_mode_cooldown_complete
   priority: 100
 
 shot_profiles:
@@ -40,11 +40,16 @@ shot_groups:
 
 logic_blocks:
   sequences:
-    gaming_complete:
-      enable_events: gamingDrops_hit_me_complete_complete
+    gaming:
       events: gaming_kickouts_complete
-      events_when_complete: mode_gaming_complete
       reset_events: mode_gaming_stopping
+
+timers:
+  mode_cooldown:
+    end_value: 4
+    control_events:
+      - event: logicblock_gaming_complete
+        action: start
 
 slide_player:
   gaming_selected:

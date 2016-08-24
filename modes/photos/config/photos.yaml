@@ -2,23 +2,21 @@
 
 mode:
   start_events: photos_selected
-  stop_events: mode_photos_complete
+  stop_events: timer_mode_cooldown_complete
   priority: 100
-
-timers:
-  mode_stop_timer:
-    end_value: 4
-    control_events:
-      - event: s_fixedTarget_post_inline_active
-        action: start
 
 logic_blocks:
   sequences:
-    photos_complete:
-      enable_events: s_fixedTarget_post_inline_active
-      events: timer_mode_stop_timer_complete
-      events_when_complete: mode_photos_complete
+    photos:
+      events: s_fixedTarget_post_inline_active
       reset_events: mode_photos_stopping
+
+timers:
+  mode_cooldown:
+    end_value: 4
+    control_events:
+      - event: logicblock_photos_complete
+        action: start
 
 show_player:
     s_fixedTarget_post_inline_active:

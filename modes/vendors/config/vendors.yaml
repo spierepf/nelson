@@ -2,7 +2,7 @@
 
 mode:
   start_events: vendors_selected
-  stop_events: mode_vendors_complete
+  stop_events: timer_mode_cooldown_complete
   priority: 100
 
 logic_blocks:
@@ -25,10 +25,16 @@ logic_blocks:
       count_complete_value: 0
       direction: down
       reset_events: mode_vendors_stopping
-    vendors_complete:
+    vendors:
       count_events: logicblock_vendor_left_hits_complete, logicblock_vendor_right_hits_complete, logicblock_vendor_bottom_hits_complete
       starting_count: 3
       count_complete_value: 0
       direction: down
       reset_events: mode_vendors_stopping
-      events_when_complete: mode_vendors_complete
+
+timers:
+  mode_cooldown:
+    end_value: 4
+    control_events:
+      - event: logicblock_vendors_complete
+        action: start

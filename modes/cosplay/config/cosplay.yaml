@@ -2,7 +2,7 @@
 
 mode:
   start_events: cosplay_selected
-  stop_events: mode_cosplay_complete
+  stop_events: timer_mode_cooldown_complete
   priority: 100
 
 shot_profiles:
@@ -91,15 +91,17 @@ shots:
     reset_events: mode_cosplay_stopping
 
 logic_blocks:
-  counters:
-    cosplay_complete:
-      enable_events: mainStage_cosplay_pose_3_hit_me_active_hit
-      count_events: upperLane_1_hit, upperLane_2_hit, upperLane_3_hit
-      starting_count: 1
-      count_complete_value: 0
-      direction: down
-      events_when_complete: mode_cosplay_complete
+  sequences:
+    cosplay:
+      events: mainStage_cosplay_pose_3_hit_me_active_hit
       reset_events: mode_cosplay_stopping
+
+timers:
+  mode_cooldown:
+    end_value: 4
+    control_events:
+      - event: logicblock_cosplay_complete
+        action: start
 
 slide_player:
   cosplay_selected:
