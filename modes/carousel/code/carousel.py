@@ -45,14 +45,19 @@ class Carousel(Mode):
         player = self.machine.game.player
         return player.available_modes[self.highlighted_mode_index]
 
+    def release_current_mode(self):
+        self.log.info("Releasing mode: " + str(self.highlighted_mode()))
+        self.machine.events.post(self.highlighted_mode().name + "_unhighlighted")
+
     def update_highlighted_mode(self):
         self.log.info("Highlighted mode: " + str(self.highlighted_mode()))
-
         self.machine.events.post(self.highlighted_mode().name + "_highlighted")
 
     def next_item(self, **kwargs):
         player = self.machine.game.player
 
+        self.release_current_mode()
+        
         self.highlighted_mode_index += 1
         if self.highlighted_mode_index >= len(player.available_modes):
             self.highlighted_mode_index = 0
