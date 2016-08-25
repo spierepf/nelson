@@ -23,7 +23,7 @@ class Carousel(Mode):
         player = self.machine.game.player
         if not player.is_player_var('available_modes'):
             player.available_modes = self.items
-        self.highlighted_mode_index = 0
+        player.highlighted_mode_index = 0
 
         self.update_highlighted_mode()
 
@@ -43,7 +43,7 @@ class Carousel(Mode):
 
     def highlighted_mode(self):
         player = self.machine.game.player
-        return player.available_modes[self.highlighted_mode_index]
+        return player.available_modes[player.highlighted_mode_index]
 
     def release_current_mode(self):
         self.log.info("Releasing mode: " + str(self.highlighted_mode()))
@@ -58,9 +58,9 @@ class Carousel(Mode):
 
         self.release_current_mode()
         
-        self.highlighted_mode_index += 1
-        if self.highlighted_mode_index >= len(player.available_modes):
-            self.highlighted_mode_index = 0
+        player.highlighted_mode_index += 1
+        if player.highlighted_mode_index >= len(player.available_modes):
+            player.highlighted_mode_index = 0
 
         self.update_highlighted_mode()
 

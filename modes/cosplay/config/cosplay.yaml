@@ -95,12 +95,13 @@ logic_blocks:
     cosplay:
       events: mainStage_cosplay_pose_3_hit_me_active_hit
       reset_events: mode_cosplay_stopping
+      events_when_complete: carousel_mode_complete
 
 timers:
   mode_cooldown:
     end_value: 4
     control_events:
-      - event: logicblock_cosplay_complete
+      - event: carousel_mode_complete
         action: start
 
 slide_player:

@@ -57,12 +57,13 @@ logic_blocks:
     photos:
       events: photo_fixed_hit_me_4_active_hit
       reset_events: mode_photos_stopping
+      events_when_complete: carousel_mode_complete
 
 timers:
   mode_cooldown:
     end_value: 4
     control_events:
-      - event: logicblock_photos_complete
+      - event: carousel_mode_complete
         action: start
 
 show_player:

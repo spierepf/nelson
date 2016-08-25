@@ -1,0 +1,48 @@
+# config_version=3
+
+config:
+  - config.yaml
+
+switch_player:
+  start_event: mode_attract_started
+  start_delay: 1s
+  steps:
+    - time: 100ms
+      switch: s_trough1
+      action: activate
+    - time: 600ms
+      switch: s_start
+      action: hit
+    - time: 100ms
+      switch: s_trough1
+      action: deactivate
+    - time: 100ms
+      switch: s_plungerLane
+      action: activate
+    - time: 1s
+      switch: s_plungerLane
+      action: deactivate
+    - time: 1s
+      switch: s_dropTarget_right_1
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_2
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_3
+      action: activate
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
+    - time: 3s
+      switch: s_upperLane_2
+      action: hit
+    - time: 1s
+      switch: s_drain
+      action: activate

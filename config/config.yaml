@@ -17,7 +17,7 @@ fonts:
         file: WELTRON2.TTF
 
 scriptlets:
-    bumper_counter.BumperCounter
+    carousel_mode_complete_handler.CarouselModeCompleteHandler
 
 bcp:
     connections:

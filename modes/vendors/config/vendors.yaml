@@ -31,10 +31,11 @@ logic_blocks:
       count_complete_value: 0
       direction: down
       reset_events: mode_vendors_stopping
+      events_when_complete: carousel_mode_complete
 
 timers:
   mode_cooldown:
     end_value: 4
     control_events:
-      - event: logicblock_vendors_complete
+      - event: carousel_mode_complete
         action: start
