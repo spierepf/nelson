@@ -4,6 +4,7 @@ mode:
   start_events: vendors_selected
   stop_events: timer_mode_cooldown_complete
   priority: 100
+  code: vendors.Vendors
 
 logic_blocks:
   counters:

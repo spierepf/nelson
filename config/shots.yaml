@@ -13,51 +13,51 @@ shots:
 
   vendor_left:
     switch: s_popBumper_left
-    led:
-      - l_vendor_left_a
-      - l_vendor_left_b
-      - l_vendor_left_c
-      - l_vendor_left_d
-      - l_vendor_left_e
-      - l_vendor_left_f
-      - l_vendor_left_g
-      - l_vendor_left_h
-      - l_vendor_left_i
-      - l_vendor_left_j
-      - l_vendor_left_k
-      - l_vendor_left_l
+  #   led:
+  #     - l_vendor_left_a
+  #     - l_vendor_left_b
+  #     - l_vendor_left_c
+  #     - l_vendor_left_d
+  #     - l_vendor_left_e
+  #     - l_vendor_left_f
+  #     - l_vendor_left_g
+  #     - l_vendor_left_h
+  #     - l_vendor_left_i
+  #     - l_vendor_left_j
+  #     - l_vendor_left_k
+  #     - l_vendor_left_l
 
   vendor_right:
     switch: s_popBumper_right
-    led:
-      - l_vendor_right_a
-      - l_vendor_right_b
-      - l_vendor_right_c
-      - l_vendor_right_d
-      - l_vendor_right_e
-      - l_vendor_right_f
-      - l_vendor_right_g
-      - l_vendor_right_h
-      - l_vendor_right_i
-      - l_vendor_right_j
-      - l_vendor_right_k
-      - l_vendor_right_l
+  #   led:
+  #     - l_vendor_right_a
+  #     - l_vendor_right_b
+  #     - l_vendor_right_c
+  #     - l_vendor_right_d
+  #     - l_vendor_right_e
+  #     - l_vendor_right_f
+  #     - l_vendor_right_g
+  #     - l_vendor_right_h
+  #     - l_vendor_right_i
+  #     - l_vendor_right_j
+  #     - l_vendor_right_k
+  #     - l_vendor_right_l
 
   vendor_bottom:
     switch: s_popBumper_bottom
-    led:
-      - l_vendor_bottom_a
-      - l_vendor_bottom_b
-      - l_vendor_bottom_c
-      - l_vendor_bottom_d
-      - l_vendor_bottom_e
-      - l_vendor_bottom_f
-      - l_vendor_bottom_g
-      - l_vendor_bottom_h
-      - l_vendor_bottom_i
-      - l_vendor_bottom_j
-      - l_vendor_bottom_k
-      - l_vendor_bottom_l
+  #   led:
+  #     - l_vendor_bottom_a
+  #     - l_vendor_bottom_b
+  #     - l_vendor_bottom_c
+  #     - l_vendor_bottom_d
+  #     - l_vendor_bottom_e
+  #     - l_vendor_bottom_f
+  #     - l_vendor_bottom_g
+  #     - l_vendor_bottom_h
+  #     - l_vendor_bottom_i
+  #     - l_vendor_bottom_j
+  #     - l_vendor_bottom_k
+  #     - l_vendor_bottom_l
 
   kickout_left:
     switch: s_kickout_left
