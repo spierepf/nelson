@@ -5,8 +5,8 @@ smartmatrix:
     use_separate_thread: yes
     
 dmd:
-    physical: yes
-#    physical: no
+#    physical: yes
+    physical: no
     width: 128
     height: 32
     type: color
