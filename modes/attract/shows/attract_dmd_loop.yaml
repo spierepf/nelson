@@ -10,7 +10,8 @@
       image: hms
       h_pos: left
     - type: text
-      text: '&'
+      text: 'AND'
+      font: small
     - type: image
       image: halcon
       h_pos: right
@@ -51,7 +52,7 @@
 - tocks: 3
   display:
     - type: image
-      image: cpr
+      image: great_pinball
       transition:
         type: move_out
         duration: 1s
@@ -60,7 +61,26 @@
 - tocks: 3
   display:
     - type: image
-      image: great_pinball
+      image: cpr
+      transition:
+        type: move_out
+        duration: 1s
+        direction: top
+
+- tocks: 3
+  display:
+    - type: text
+      text: 'AND'
+- tocks: 3
+  display:
+    - type: shape
+      shape: box
+      thickness: 0
+      width: 128
+      height: 32
+      color: 07213a
+    - type: image
+      image: nautel
       transition:
         type: move_out
         duration: 1s
