@@ -50,6 +50,19 @@ shots:
       - l_main_stage_arrow_2_f
       - l_main_stage_arrow_2_g
       - l_main_stage_arrow_2_h
+      - l_main_stage_edge_a
+      - l_main_stage_edge_b
+      - l_main_stage_edge_c
+      - l_main_stage_edge_d
+      - l_main_stage_edge_e
+      - l_main_stage_edge_f
+      - l_main_stage_edge_g
+      - l_main_stage_edge_h
+      - l_main_stage_edge_i
+      - l_main_stage_edge_j
+      - l_main_stage_edge_k
+      - l_main_stage_edge_l
+      - l_main_stage_edge_m
     profile: hit_me
     enable_events: cosplayDrops_hit_me_complete_complete
     reset_events: mode_cosplay_stopping
@@ -72,6 +85,19 @@ shots:
       - l_main_stage_arrow_2_f
       - l_main_stage_arrow_2_g
       - l_main_stage_arrow_2_h
+      - l_main_stage_edge_a
+      - l_main_stage_edge_b
+      - l_main_stage_edge_c
+      - l_main_stage_edge_d
+      - l_main_stage_edge_e
+      - l_main_stage_edge_f
+      - l_main_stage_edge_g
+      - l_main_stage_edge_h
+      - l_main_stage_edge_i
+      - l_main_stage_edge_j
+      - l_main_stage_edge_k
+      - l_main_stage_edge_l
+      - l_main_stage_edge_m
     profile: hit_me
     enable_events: mainStage_cosplay_pose_1_hit_me_active_hit
     reset_events: mode_cosplay_stopping
@@ -86,7 +112,19 @@ shots:
       - l_main_stage_arrow_2_f
       - l_main_stage_arrow_2_g
       - l_main_stage_arrow_2_h
-    profile: hit_me
+      - l_main_stage_edge_a
+      - l_main_stage_edge_b
+      - l_main_stage_edge_c
+      - l_main_stage_edge_d
+      - l_main_stage_edge_e
+      - l_main_stage_edge_f
+      - l_main_stage_edge_g
+      - l_main_stage_edge_h
+      - l_main_stage_edge_i
+      - l_main_stage_edge_j
+      - l_main_stage_edge_k
+      - l_main_stage_edge_l
+      - l_main_stage_edge_m
     enable_events: mainStage_cosplay_pose_2_hit_me_active_hit
     reset_events: mode_cosplay_stopping
 

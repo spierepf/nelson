@@ -114,6 +114,6 @@ switches:
         number: 1-11
         
     s_mainStage_entry:
-        number: 1-11
+        number: 10-11
         tags: kingpyn_disable_pullup
 

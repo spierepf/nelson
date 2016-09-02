@@ -45,7 +45,7 @@ leds:
     l_admissions_3: { number: 38 }
     
     l_main_stage_edge_a: { number: 39 }
-    l_main_stage_edge_b: { number: 34 }
+    l_main_stage_edge_b: { number: 40 }
     l_main_stage_edge_c: { number: 41 }
     l_main_stage_edge_d: { number: 42 }
     l_main_stage_edge_e: { number: 43 }

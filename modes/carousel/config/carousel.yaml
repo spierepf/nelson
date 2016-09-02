@@ -44,7 +44,7 @@ light_player:
   photos_highlighted:
     - show: photos_arrow_chase_rainbow
       repeat: yes
-  photos_highlighted:
+  photos_unhighlighted:
     - show: photos_arrow_chase_rainbow
       action: stop
 
