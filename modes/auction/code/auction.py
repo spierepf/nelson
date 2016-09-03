@@ -4,12 +4,9 @@ import random
 
 class Auction(Mode):
     def mode_init(self):
-        self.max_player_bid = 80
-        self.max_opponent_bid = 160
-        self.opponent_bids = [random.randint(0,self.max_opponent_bid-1) for _ in range(7)]
-        self.opponent_bids.sort()
-        self.opponent_bids += [self.max_opponent_bid]
         self.timer = Timer(callback=self.tick, frequency=1.0/5.0)
+
+        self.max_player_bid = 80.0
         self.player_leds = [
             self.machine.leds['l_player_bid_a'],
             self.machine.leds['l_player_bid_b'],
@@ -20,6 +17,8 @@ class Auction(Mode):
             self.machine.leds['l_player_bid_g'],
             self.machine.leds['l_player_bid_h']
         ]
+
+        self.max_opponent_bid = 160.0
         self.opponent_leds = [
             self.machine.leds['l_opponent_bid_a'],
             self.machine.leds['l_opponent_bid_b'],
@@ -37,14 +36,20 @@ class Auction(Mode):
     def mode_stop(self, **kwargs):
         self.machine.timing.remove(self.timer)
 
+    def show_fraction(self, fraction, leds, color):
+        count = len(leds) * fraction
+        for i in range(0, int(count)):
+            leds[i].color(color)
+        partial = [int(i * (count % 1)) for i in color]
+        leds[int(count)].color(partial)
+        for i in range(int(count) + 1, len(leds)):
+            leds[i].color([0, 0, 0])
+
     def tick(self, **kwargs):
         player = self.machine.game.player
 
-        player_bid = min(self.max_player_bid, player["player_bid_count"])
-        for i in range(0, player_bid / 10):
-            self.player_leds[i].color([0,0,255])
+        fraction = min(self.max_player_bid, player["player_bid_count"]) / self.max_player_bid
+        self.show_fraction(fraction, self.player_leds, [0, 255, 0])
 
-        if player_bid < self.max_player_bid:
-            self.player_leds[player_bid / 10].color([0,0,25*(player_bid%10)])
-            for i in range(1 + (player_bid / 10), len(self.player_leds)):
-                self.player_leds[i].color([0,0,0]);
+        fraction = min(self.max_opponent_bid, player["auction_opponent_bid_tick"]) / self.max_opponent_bid
+        self.show_fraction(fraction, self.opponent_leds, [255, 0, 255])
