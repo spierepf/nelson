@@ -38,19 +38,19 @@ shot_profiles:
 shots:
   photo_drop_1:
     profile: hit_me_1
-    reset_events: mode_cosplay_stopping
+    reset_events: mode_photos_stopping
   photo_drop_2:
     profile: hit_me_2
     enable_events: photo_drop_1_hit_me_1_active_hit
-    reset_events: mode_cosplay_stopping
+    reset_events: mode_photos_stopping
   photo_drop_3:
     profile: hit_me_3
     enable_events: photo_drop_2_hit_me_2_active_hit
-    reset_events: mode_cosplay_stopping
+    reset_events: mode_photos_stopping
   photo_fixed:
     profile: hit_me_4
     enable_events: photo_drop_3_hit_me_3_active_hit
-    reset_events: mode_cosplay_stopping
+    reset_events: mode_photos_stopping
 
 logic_blocks:
   sequences:
