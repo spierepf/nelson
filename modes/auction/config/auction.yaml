@@ -2,4 +2,26 @@
 
 mode:
   start_events: auction_selected
+  stop_events: timer_mode_cooldown_complete
   priority: 100
+  code: auction.Auction
+
+logic_blocks:
+  counters:
+    player_bid:
+      count_events: spinner_hit
+      starting_count: 0
+      count_complete_value: 80
+      reset_events: mode_auction_stopping
+
+timers:
+  opponent_bid:
+    end_value: 160
+    control_events:
+      - event: mode_auction_started
+        action: start  
+  mode_cooldown:
+    end_value: 4
+    control_events:
+      - event: carousel_mode_complete
+        action: start

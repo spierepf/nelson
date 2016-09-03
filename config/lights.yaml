@@ -140,23 +140,23 @@ leds:
     l_xp_bar_g: { number: 511 }
     l_xp_bar_h: { number: 511 }
     
-    l_other_bar_0_a: { number: 511 }
-    l_other_bar_0_b: { number: 511 }
-    l_other_bar_0_c: { number: 511 }
-    l_other_bar_0_d: { number: 511 }
-    l_other_bar_0_e: { number: 511 }
-    l_other_bar_0_f: { number: 511 }
-    l_other_bar_0_g: { number: 511 }
-    l_other_bar_0_h: { number: 511 }
+    l_player_bid_a: { number: 455 }
+    l_player_bid_b: { number: 454 }
+    l_player_bid_c: { number: 453 }
+    l_player_bid_d: { number: 452 }
+    l_player_bid_e: { number: 451 }
+    l_player_bid_f: { number: 450 }
+    l_player_bid_g: { number: 449 }
+    l_player_bid_h: { number: 448 }
     
-    l_other_bar_1_a: { number: 511 }
-    l_other_bar_1_b: { number: 511 }
-    l_other_bar_1_c: { number: 511 }
-    l_other_bar_1_d: { number: 511 }
-    l_other_bar_1_e: { number: 511 }
-    l_other_bar_1_f: { number: 511 }
-    l_other_bar_1_g: { number: 511 }
-    l_other_bar_1_h: { number: 511 }
+    l_opponent_bid_a: { number: 456 }
+    l_opponent_bid_b: { number: 457 }
+    l_opponent_bid_c: { number: 458 }
+    l_opponent_bid_d: { number: 459 }
+    l_opponent_bid_e: { number: 460 }
+    l_opponent_bid_f: { number: 461 }
+    l_opponent_bid_g: { number: 462 }
+    l_opponent_bid_h: { number: 463 }
     
     l_cosplay_drop_target_0: { number: 82 }
     l_cosplay_drop_target_1: { number: 81 }

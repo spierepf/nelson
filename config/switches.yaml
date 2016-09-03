@@ -64,6 +64,9 @@ switches:
 
     s_spinner:
         number: 10-0
+        debounce_open: 5
+        debounce_close: 5
+
 
     s_rubberSwitch_bottom:
         number: 10-6

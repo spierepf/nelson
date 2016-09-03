@@ -78,7 +78,6 @@ class Vendors(Mode):
                                 self.machine.leds['l_vendor_bottom_l'],
                             ])
 
-
     def mode_start(self, **kwargs):
         self.machine.timing.add(self.timer)
 

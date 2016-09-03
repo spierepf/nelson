@@ -39,4 +39,8 @@ light_player:
       - show: gaming_drop_target_chase_magenta
         tocks_per_sec: 4
         repeat: yes
+      - show: player_bid_chase_rainbow
+        repeat: yes
+      - show: opponent_bid_chase_rainbow
+        repeat: yes
 

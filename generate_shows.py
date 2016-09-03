@@ -352,3 +352,5 @@ for leds in ["admissions", "gaming_drop_target", "cosplay_drop_target"]:
     Chase(Leds(leds), 'magenta', [MAGENTA, GRAY, GRAY]).write()
 
 RainbowChase(Leds("main_stage_edge")).write()
+RainbowChase(Leds("player_bid")).write()
+RainbowChase(Leds("opponent_bid")).write()
