@@ -40,10 +40,11 @@ class Auction(Mode):
         count = len(leds) * fraction
         for i in range(0, int(count)):
             leds[i].color(color)
-        partial = [int(i * (count % 1)) for i in color]
-        leds[int(count)].color(partial)
-        for i in range(int(count) + 1, len(leds)):
-            leds[i].color([0, 0, 0])
+        if fraction < 1.0:
+            partial = [int(i * (count % 1)) for i in color]
+            leds[int(count)].color(partial)
+            for i in range(int(count) + 1, len(leds)):
+                leds[i].color([0, 0, 0])
 
     def tick(self, **kwargs):
         player = self.machine.game.player

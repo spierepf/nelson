@@ -2,9 +2,54 @@
 
 mode:
   start_events: auction_selected
-  stop_events: timer_mode_cooldown_complete
+  stop_events: timer_mode_cooldown_complete, timer_opponent_bid_complete
   priority: 100
   code: auction.Auction
+
+shots:
+  auction_collect:
+    switch: s_mainStage_entry
+    led:
+      - l_main_stage_arrow_0_a
+      - l_main_stage_arrow_0_b
+      - l_main_stage_arrow_0_c
+      - l_main_stage_arrow_0_d
+      - l_main_stage_arrow_0_e
+      - l_main_stage_arrow_0_f
+      - l_main_stage_arrow_0_g
+      - l_main_stage_arrow_0_h
+      - l_main_stage_arrow_1_a
+      - l_main_stage_arrow_1_b
+      - l_main_stage_arrow_1_c
+      - l_main_stage_arrow_1_d
+      - l_main_stage_arrow_1_e
+      - l_main_stage_arrow_1_f
+      - l_main_stage_arrow_1_g
+      - l_main_stage_arrow_1_h
+      - l_main_stage_arrow_2_a
+      - l_main_stage_arrow_2_b
+      - l_main_stage_arrow_2_c
+      - l_main_stage_arrow_2_d
+      - l_main_stage_arrow_2_e
+      - l_main_stage_arrow_2_f
+      - l_main_stage_arrow_2_g
+      - l_main_stage_arrow_2_h
+      - l_main_stage_edge_a
+      - l_main_stage_edge_b
+      - l_main_stage_edge_c
+      - l_main_stage_edge_d
+      - l_main_stage_edge_e
+      - l_main_stage_edge_f
+      - l_main_stage_edge_g
+      - l_main_stage_edge_h
+      - l_main_stage_edge_i
+      - l_main_stage_edge_j
+      - l_main_stage_edge_k
+      - l_main_stage_edge_l
+      - l_main_stage_edge_m
+    profile: hit_me
+    enable_events: logicblock_player_bid_complete
+    reset_events: mode_auction_stopping
 
 logic_blocks:
   counters:
@@ -13,13 +58,20 @@ logic_blocks:
       starting_count: 0
       count_complete_value: 80
       reset_events: mode_auction_stopping
+  sequences:
+    auction:
+      events: auction_collect_hit_me_active_hit
+      reset_events: mode_auction_stopping
+      events_when_complete: carousel_mode_complete
 
 timers:
   opponent_bid:
     end_value: 160
     control_events:
       - event: mode_auction_started
-        action: start  
+        action: start
+      - event: logicblock_player_bid_complete
+        action: stop
   mode_cooldown:
     end_value: 4
     control_events:
