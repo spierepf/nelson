@@ -6,7 +6,6 @@ class Auction(Mode):
     def mode_init(self):
         self.timer = Timer(callback=self.tick, frequency=1.0/5.0)
 
-        self.max_player_bid = 80.0
         self.player_leds = [
             self.machine.leds['l_player_bid_a'],
             self.machine.leds['l_player_bid_b'],
@@ -18,7 +17,6 @@ class Auction(Mode):
             self.machine.leds['l_player_bid_h']
         ]
 
-        self.max_opponent_bid = 160.0
         self.opponent_leds = [
             self.machine.leds['l_opponent_bid_a'],
             self.machine.leds['l_opponent_bid_b'],
@@ -49,8 +47,10 @@ class Auction(Mode):
     def tick(self, **kwargs):
         player = self.machine.game.player
 
-        fraction = min(self.max_player_bid, player["player_bid_count"]) / self.max_player_bid
+        max_player_bid = float(self.config["logic_blocks"]["counters"]["player_bid"]["count_complete_value"])
+        fraction = min(1.0, player["player_bid_count"] / max_player_bid)
         self.show_fraction(fraction, self.player_leds, [0, 255, 0])
 
-        fraction = min(self.max_opponent_bid, player["auction_opponent_bid_tick"]) / self.max_opponent_bid
+        max_opponent_bid = float(self.timers["opponent_bid"].end_value)
+        fraction = min(1.0, player["auction_opponent_bid_tick"] / max_opponent_bid)
         self.show_fraction(fraction, self.opponent_leds, [255, 0, 255])
