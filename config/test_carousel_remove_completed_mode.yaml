@@ -23,26 +23,26 @@ switch_player:
       switch: s_plungerLane
       action: deactivate
     - time: 1s
-      switch: s_dropTarget_right_1
+      switch: s_dropTarget_left_1
       action: activate
     - time: 1s
-      switch: s_dropTarget_right_2
+      switch: s_dropTarget_left_2
       action: activate
     - time: 1s
-      switch: s_dropTarget_right_3
+      switch: s_dropTarget_left_3
       action: activate
     - time: 1s
-      switch: s_mainStage_entry
-      action: hit
+      switch: s_kickOut_right
+      action: activate
     - time: 1s
-      switch: s_mainStage_entry
-      action: hit
+      switch: s_kickOut_right
+      action: deactivate
     - time: 1s
-      switch: s_mainStage_entry
-      action: hit
-    - time: 3s
-      switch: s_upperLane_2
-      action: hit
+      switch: s_kickOut_left
+      action: activate
+    - time: 1s
+      switch: s_kickOut_left
+      action: deactivate
     - time: 1s
       switch: s_drain
       action: activate
