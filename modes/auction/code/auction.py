@@ -45,12 +45,16 @@ class Auction(Mode):
                 leds[i].color([0, 0, 0])
 
     def tick(self, **kwargs):
-        player = self.machine.game.player
+        if self.machine.game == None:
+            self.log.info("Auction.tick() called outside game")
+            self.machine.timing.remove(self.timer)
+        else:
+            player = self.machine.game.player
 
-        max_player_bid = float(self.config["logic_blocks"]["counters"]["player_bid"]["count_complete_value"])
-        fraction = min(1.0, player["player_bid_count"] / max_player_bid)
-        self.show_fraction(fraction, self.player_leds, [0, 255, 0])
+            max_player_bid = float(self.config["logic_blocks"]["counters"]["player_bid"]["count_complete_value"])
+            fraction = min(1.0, player["player_bid_count"] / max_player_bid)
+            self.show_fraction(fraction, self.player_leds, [0, 255, 0])
 
-        max_opponent_bid = float(self.timers["opponent_bid"].end_value)
-        fraction = min(1.0, player["auction_opponent_bid_tick"] / max_opponent_bid)
-        self.show_fraction(fraction, self.opponent_leds, [255, 0, 255])
+            max_opponent_bid = float(self.config["timers"]["opponent_bid"]["end_value"])
+            fraction = min(1.0, player["auction_opponent_bid_tick"] / max_opponent_bid)
+            self.show_fraction(fraction, self.opponent_leds, [255, 0, 255])

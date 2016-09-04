@@ -88,6 +88,10 @@ class Vendors(Mode):
         self.bottom_bumper.reset()
 
     def tick(self, **kwargs):
-        self.left_bumper.tick()
-        self.right_bumper.tick()
-        self.bottom_bumper.tick()
+        if self.machine.game == None:
+            self.log.info("Vendors.tick() called outside game")
+            self.machine.timing.remove(self.timer)
+        else:
+            self.left_bumper.tick()
+            self.right_bumper.tick()
+            self.bottom_bumper.tick()
