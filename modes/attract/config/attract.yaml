@@ -43,4 +43,6 @@ light_player:
         repeat: yes
       - show: opponent_bid_chase_rainbow
         repeat: yes
+      - show: xp_bar_chase_rainbow
+        repeat: yes
 

@@ -131,15 +131,6 @@ leds:
     l_gaming_drop_target_1: { number: 113 }
     l_gaming_drop_target_2: { number: 112 }
     
-    l_xp_bar_a: { number: 511 }
-    l_xp_bar_b: { number: 511 }
-    l_xp_bar_c: { number: 511 }
-    l_xp_bar_d: { number: 511 }
-    l_xp_bar_e: { number: 511 }
-    l_xp_bar_f: { number: 511 }
-    l_xp_bar_g: { number: 511 }
-    l_xp_bar_h: { number: 511 }
-    
     l_player_bid_a: { number: 455 }
     l_player_bid_b: { number: 454 }
     l_player_bid_c: { number: 453 }
@@ -157,6 +148,16 @@ leds:
     l_opponent_bid_f: { number: 461 }
     l_opponent_bid_g: { number: 462 }
     l_opponent_bid_h: { number: 463 }
+    
+    l_xp_bar_a: { number: 464 }
+    l_xp_bar_b: { number: 465 }
+    l_xp_bar_c: { number: 466 }
+    l_xp_bar_d: { number: 467 }
+    l_xp_bar_e: { number: 468 }
+    l_xp_bar_f: { number: 469 }
+    l_xp_bar_g: { number: 470 }
+    l_xp_bar_h: { number: 471 }
+    
     
     l_cosplay_drop_target_0: { number: 82 }
     l_cosplay_drop_target_1: { number: 81 }

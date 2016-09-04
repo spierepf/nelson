@@ -354,3 +354,4 @@ for leds in ["admissions", "gaming_drop_target", "cosplay_drop_target"]:
 RainbowChase(Leds("main_stage_edge")).write()
 RainbowChase(Leds("player_bid")).write()
 RainbowChase(Leds("opponent_bid")).write()
+RainbowChase(Leds("xp_bar")).write()
