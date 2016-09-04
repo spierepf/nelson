@@ -2,25 +2,45 @@
 
 mode:
   start_events: stargazer_selected
+  stop_events: timer_mode_cooldown_complete
   priority: 100
 
-logic_blocks:
-  accruals:
-    light_multiball:
-      enable_events: mode_stargazer_started
-      events:
-        - ball_lock_balllock_left_full
-        - ball_lock_balllock_right_full
-    achieve_multiball:
-      enable_events: logicblock_light_multiball_complete
-      events: s_spinner_active
+shot_profiles:
+  hit_me:
+    states:
+      - name: active
+        light_script: flash_green
+      - name: complete
+        light_script: on_green
 
-slide_player:
-  logicblock_light_multiball_complete:
-    - type: text
-      text: "SPIN THE DISCO BALL!"
-      expire: 2s
-  logicblock_achieve_multiball_complete:
-    - type: text
-      text: "IT'S PARTY TIME!"
-      expire: 2s
+shots:
+  kickout_left:
+    profile: hit_me
+    reset_events: mode_stargazer_stopping
+  cosplay_kickout:
+    profile: hit_me
+    reset_events: mode_stargazer_stopping
+  spinner:
+    profile: hit_me
+    reset_events: mode_stargazer_stopping
+    enable_events: stargazer_kickouts_complete
+
+shot_groups:
+  stargazer_kickouts:
+    shots: kickout_left, cosplay_kickout
+    enable_events: mode_stargazer_started
+    reset_events: mode_stargazer_stopping
+
+logic_blocks:
+  sequences:
+    stargazer:
+      events: spinner_hit_me_active_hit
+      reset_events: mode_stargazer_stopping
+      events_when_complete: carousel_mode_complete
+
+timers:
+  mode_cooldown:
+    end_value: 4
+    control_events:
+      - event: carousel_mode_complete
+        action: start
