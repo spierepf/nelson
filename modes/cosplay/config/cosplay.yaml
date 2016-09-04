@@ -125,6 +125,7 @@ shots:
       - l_main_stage_edge_k
       - l_main_stage_edge_l
       - l_main_stage_edge_m
+    profile: hit_me
     enable_events: mainStage_cosplay_pose_2_hit_me_active_hit
     reset_events: mode_cosplay_stopping
 

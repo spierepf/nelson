@@ -20,6 +20,18 @@ switch_player:
       switch: s_plungerLane
       action: activate
     - time: 1s
+      switch: s_flipper_right
+      action: hit
+    - time: 1s
+      switch: s_flipper_right
+      action: hit
+    - time: 1s
+      switch: s_flipper_right
+      action: hit
+    - time: 1s
+      switch: s_flipper_right
+      action: hit
+    - time: 1s
       switch: s_plungerLane
       action: deactivate
     - time: 1s
@@ -39,7 +51,4 @@ switch_player:
       action: hit
     - time: 1s
       switch: s_mainStage_entry
-      action: hit
-    - time: 3s
-      switch: s_upperLane_2
       action: hit
