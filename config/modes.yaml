@@ -3,6 +3,7 @@
 modes:
   - base
   - carousel
+  - carousel_restart
   - cosplay
   - vendors
   - auction
