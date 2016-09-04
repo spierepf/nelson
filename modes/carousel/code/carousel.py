@@ -1,4 +1,5 @@
 from mpf.system.mode import Mode
+import copy
 
 class CarouselItem:
     def __init__(self, name):
@@ -10,7 +11,7 @@ class CarouselItem:
 class Carousel(Mode):
 
     def mode_init(self):
-        self.items = [CarouselItem('cosplay'), CarouselItem('vendors'), CarouselItem('auction'), CarouselItem('photos'), CarouselItem('gaming'), CarouselItem('stargazer')]
+        self.items = [CarouselItem('gaming'), CarouselItem('vendors'), CarouselItem('auction'), CarouselItem('photos'), CarouselItem('cosplay'), CarouselItem('stargazer')]
         self.next_item_events = ['sw_carousel_next_item']
         self.select_item_events = ['sw_carousel_select_item', 'balldevice_plungerLane_ball_left']
 
@@ -21,8 +22,9 @@ class Carousel(Mode):
         self.register_handlers(self.select_item_events, self.select_item)
 
         player = self.machine.game.player
-        if not player.is_player_var('available_modes'):
-            player.available_modes = self.items
+        if not player.is_player_var('available_modes') or player['available_modes'] == None:
+            self.log.info("Available modes: " + str(self.items))
+            player.available_modes = copy.copy(self.items)
         player.highlighted_mode_index = 0
 
         self.update_highlighted_mode()
