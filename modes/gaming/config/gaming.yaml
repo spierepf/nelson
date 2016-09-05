@@ -32,16 +32,13 @@ shots:
     enable_events: gamingDrops_hit_me_complete_complete
     reset_events: mode_gaming_stopping
 
-shot_groups:
-  gaming_kickouts:
-    shots: kickout_left, cosplay_kickout
-    enable_events: gamingDrops_hit_me_complete_complete
-    reset_events: mode_gaming_stopping
-
 logic_blocks:
-  sequences:
+  accruals:
     gaming:
-      events: gaming_kickouts_complete
+      events:
+        - balldevice_kickout_left_ball_eject_attempt
+        - balldevice_kickout_right_ball_eject_attempt
+      enable_events: gamingDrops_hit_me_complete_complete
       reset_events: mode_gaming_stopping
       events_when_complete: carousel_mode_complete
 
