@@ -53,9 +53,9 @@ ball_locks:
         balls_to_lock: 1
         lock_devices: kickOut_left, kickOut_right
         request_new_balls_to_pf: false
-        enable_events: mode_carousel_restart_starting
-        reset_events: mode_carousel_restart_stopping
-        disable_events: mode_carousel_restart_stopped
+        enable_events: carousel_mode_complete
+        reset_events: mode_carousel_stopping
+        disable_events: mode_carousel_stopped
 
 autofire_coils:
     slingshot_right:

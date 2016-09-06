@@ -1,0 +1,498 @@
+# config_version=3
+
+config:
+  - config.yaml
+
+switch_player:
+  start_event: mode_attract_started
+  start_delay: 1s
+  steps:
+    - time: 100ms
+      switch: s_trough1
+      action: activate
+    - time: 600ms
+      switch: s_start
+      action: hit
+    - time: 100ms
+      switch: s_trough1
+      action: deactivate
+    - time: 100ms
+      switch: s_plungerLane
+      action: activate
+    - time: 1s
+      switch: s_plungerLane
+      action: deactivate
+# Gaming
+    - time: 1s
+      switch: s_dropTarget_left_1
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_left_2
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_left_3
+      action: activate
+    - time: 1s
+      switch: s_kickOut_right
+      action: activate
+    - time: 1s
+      switch: s_kickOut_right
+      action: deactivate
+    - time: 1s
+      switch: s_kickOut_left
+      action: activate
+    - time: 1s
+      switch: s_kickOut_left
+      action: deactivate
+# Carousel
+    - time: 5s
+      switch: s_kickOut_right
+      action: activate
+    - time: 5s
+      switch: s_flipper_left
+      action: hit
+    - time: 1s
+      switch: s_kickOut_right
+      action: deactivate
+# Vendors
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_left
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_right
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+    - time: 100ms
+      switch: s_popBumper_bottom
+      action: hit
+# Carousel
+    - time: 5s
+      switch: s_kickOut_right
+      action: activate
+    - time: 5s
+      switch: s_flipper_left
+      action: hit
+    - time: 1s
+      switch: s_kickOut_right
+      action: deactivate
+# Auction
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 100ms
+      switch: s_spinner
+      action: hit
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
+# Carousel
+    - time: 5s
+      switch: s_kickOut_right
+      action: activate
+    - time: 5s
+      switch: s_flipper_left
+      action: hit
+    - time: 1s
+      switch: s_kickOut_right
+      action: deactivate
+# Photos
+    - time: 5s
+      switch: s_dropTarget_centre_1
+      action: activate
+    - time: 5s
+      switch: s_dropTarget_centre_2
+      action: activate
+    - time: 5s
+      switch: s_dropTarget_centre_3
+      action: activate
+    - time: 5s
+      switch: s_fixedTarget_post_inline
+      action: hit
+# Carousel
+    - time: 5s
+      switch: s_kickOut_right
+      action: activate
+    - time: 5s
+      switch: s_flipper_left
+      action: hit
+    - time: 1s
+      switch: s_kickOut_right
+      action: deactivate
+# Cosplay
+    - time: 1s
+      switch: s_dropTarget_right_1
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_2
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_3
+      action: activate
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
+    - time: 1s
+      switch: s_mainStage_entry
+      action: hit
+# Carousel
+    - time: 5s
+      switch: s_kickOut_right
+      action: activate
+    - time: 5s
+      switch: s_flipper_left
+      action: hit
+    - time: 1s
+      switch: s_kickOut_right
+      action: deactivate
+# Stargazer
+    - time: 1s
+      switch: s_kickOut_left
+      action: activate
+    - time: 1s
+      switch: s_kickOut_left
+      action: deactivate
+    - time: 1s
+      switch: s_kickOut_right
+      action: activate
+    - time: 1s
+      switch: s_kickOut_right
+      action: deactivate
+    - time: 1s
+      switch: s_spinner
+      action: hit
+# Yer a Wizard Harry

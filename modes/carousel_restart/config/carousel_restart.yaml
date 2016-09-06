@@ -1,6 +1,0 @@
-# config_version=3
-
-mode:
-  start_events: carousel_mode_complete
-  stop_events: mode_carousel_stopped
-  priority: 200

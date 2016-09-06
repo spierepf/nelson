@@ -113,3 +113,10 @@ shot_groups:
         rotate_right_events: s_flipper_right_active
         reset_events:
             upperLanes_default_lit_complete: 1s
+
+logic_blocks:
+    counters:
+        carousel_modes_completed:
+            count_events: carousel_mode_complete
+            count_complete_value: 6
+            events_when_complete: yer_a_wizard_harry
