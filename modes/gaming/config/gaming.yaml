@@ -27,7 +27,7 @@ shots:
     profile: hit_me
     enable_events: gamingDrops_hit_me_complete_complete
     reset_events: mode_gaming_stopping
-  cosplay_kickout:
+  kickout_right:
     profile: hit_me
     enable_events: gamingDrops_hit_me_complete_complete
     reset_events: mode_gaming_stopping

@@ -81,7 +81,7 @@ shots:
     switch: s_dropTarget_left_3
     led: l_gaming_drop_target_2
 
-  cosplay_kickout:
+  kickout_right:
     switch: s_kickout_right
     led:
       - l_right_kickout_arrow_a

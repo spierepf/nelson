@@ -46,6 +46,6 @@ switch_player:
     - time: 1s
       switch: s_kickOut_right
       action: activate
-    - time: 1s
+    - time: 5s
       switch: s_flipper_left
       action: hit

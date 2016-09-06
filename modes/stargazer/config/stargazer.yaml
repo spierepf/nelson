@@ -17,7 +17,7 @@ shots:
   kickout_left:
     profile: hit_me
     reset_events: mode_stargazer_stopping
-  cosplay_kickout:
+  kickout_right:
     profile: hit_me
     reset_events: mode_stargazer_stopping
   spinner:
@@ -27,7 +27,7 @@ shots:
 
 shot_groups:
   stargazer_kickouts:
-    shots: kickout_left, cosplay_kickout
+    shots: kickout_left, kickout_right
     enable_events: mode_stargazer_started
     reset_events: mode_stargazer_stopping
 
