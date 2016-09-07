@@ -2,7 +2,7 @@
 
 mode:
   start_events: ball_starting, ball_lock_carousel_restart_lock_full
-  stop_events: mode_selected
+  stop_events: mode_selected, mode_wizard_starting
   priority: 100
   code: carousel.Carousel
 

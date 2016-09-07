@@ -2,7 +2,7 @@
 
 mode:
   start_events: gaming_selected
-  stop_events: timer_mode_cooldown_complete
+  stop_events: timer_mode_cooldown_complete, mode_wizard_starting
   priority: 100
 
 shot_profiles:

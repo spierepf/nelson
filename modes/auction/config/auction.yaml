@@ -2,7 +2,7 @@
 
 mode:
   start_events: auction_selected
-  stop_events: timer_mode_cooldown_complete, timer_opponent_bid_complete
+  stop_events: timer_mode_cooldown_complete, timer_opponent_bid_complete, mode_wizard_starting
   priority: 100
   code: auction.Auction
 

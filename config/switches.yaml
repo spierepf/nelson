@@ -29,6 +29,10 @@ switches:
         number: 21-0
         tags: carousel_next_item
 
+    s_wizard_cheat:
+        number: 21-3
+        tags: yer_a_wizard_harry
+
     s_outlane_right:
         number: 5-6
 

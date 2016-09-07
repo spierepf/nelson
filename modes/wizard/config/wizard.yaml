@@ -1,0 +1,33 @@
+# config_version=3
+
+mode:
+  start_events: yer_a_wizard_harry, sw_yer_a_wizard_harry
+  priority: 100
+  code: wizard.Wizard
+
+shot_profiles:
+  wizard:
+    states:
+      - name: active
+
+shots:
+  kickout_left:
+    profile: wizard
+    tags: wizard_mode_target
+    enable_events: enable_wizard_mode_shot_1
+    disable_events: disable_wizard_mode_shot
+  kickout_right:
+    profile: wizard
+    tags: wizard_mode_target
+    enable_events: enable_wizard_mode_shot_2
+    disable_events: disable_wizard_mode_shot
+
+timers:
+  shot_timer:
+    start_running: true
+    end_value: 20
+    restart_on_complete: true
+    control_events:
+      - event: timers_shot_timer_reset
+        action: jump
+        value: 20
