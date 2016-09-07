@@ -10,6 +10,7 @@ ball_saves:
     timer_start_events: balldevice_plungerLane_ball_eject_success
     balls_to_save: 1
     debug: yes
+    auto_launch: no
 
 scoring:
     ball_started:
