@@ -9,14 +9,27 @@ shot_profiles:
   wizard:
     states:
       - name: active
+      - name: hit
 
 shots:
   kickout_left:
     profile: wizard
     tags: wizard_mode_target
-    enable_events: enable_wizard_mode_shot_1
+    enable_events: enable_wizard_mode_shot_a
     disable_events: disable_wizard_mode_shot
   kickout_right:
+    profile: wizard
+    tags: wizard_mode_target
+    enable_events: enable_wizard_mode_shot_b
+    disable_events: disable_wizard_mode_shot
+
+shot_groups:
+  cosplayDrops:
+    profile: wizard
+    tags: wizard_mode_target
+    enable_events: enable_wizard_mode_shot_1
+    disable_events: disable_wizard_mode_shot
+  gamingDrops:
     profile: wizard
     tags: wizard_mode_target
     enable_events: enable_wizard_mode_shot_2

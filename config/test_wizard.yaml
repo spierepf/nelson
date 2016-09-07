@@ -31,4 +31,22 @@ switch_player:
     - time: 1s
       switch: s_kickout_left
       action: deactivate
+    - time: 1s
+      switch: s_dropTarget_right_1
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_2
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_3
+      action: activate
+    - time: 1s
+      switch: s_dropTarget_right_1
+      action: deactivate
+    - time: 1
+      switch: s_dropTarget_right_2
+      action: deactivate
+    - time: 1
+      switch: s_dropTarget_right_3
+      action: deactivate
 
