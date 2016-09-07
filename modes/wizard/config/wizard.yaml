@@ -17,11 +17,14 @@ shots:
     tags: wizard_mode_target
     enable_events: enable_wizard_mode_shot_a
     disable_events: disable_wizard_mode_shot
+    reset_events: disable_wizard_mode_shot
+
   kickout_right:
     profile: wizard
     tags: wizard_mode_target
     enable_events: enable_wizard_mode_shot_b
     disable_events: disable_wizard_mode_shot
+    reset_events: disable_wizard_mode_shot
 
 shot_groups:
   cosplayDrops:
@@ -29,11 +32,39 @@ shot_groups:
     tags: wizard_mode_target
     enable_events: enable_wizard_mode_shot_1
     disable_events: disable_wizard_mode_shot
+    reset_events: disable_wizard_mode_shot
+
   gamingDrops:
     profile: wizard
     tags: wizard_mode_target
     enable_events: enable_wizard_mode_shot_2
     disable_events: disable_wizard_mode_shot
+    reset_events: disable_wizard_mode_shot
+
+light_player:
+  enable_wizard_mode_shot_a:
+    - show: left_kickout_arrow_chase_rainbow
+      repeat: yes
+  enable_wizard_mode_shot_b:
+    - show: right_kickout_arrow_chase_rainbow
+      repeat: yes
+  enable_wizard_mode_shot_1:
+    - show: cosplay_drop_target_chase_blue
+      tocks_per_sec: 4
+      repeat: yes
+  enable_wizard_mode_shot_2:
+    - show: gaming_drop_target_chase_blue
+      tocks_per_sec: 4
+      repeat: yes
+  disable_wizard_mode_shot:
+    - show: left_kickout_arrow_chase_rainbow
+      action: stop
+    - show: right_kickout_arrow_chase_rainbow
+      action: stop
+    - show: cosplay_drop_target_chase_blue
+      action: stop
+    - show: gaming_drop_target_chase_blue
+      action: stop
 
 timers:
   shot_timer:
@@ -41,6 +72,6 @@ timers:
     end_value: 20
     restart_on_complete: true
     control_events:
-      - event: timers_shot_timer_reset
+      - event: disable_wizard_mode_shot
         action: jump
-        value: 20
+        value: 0

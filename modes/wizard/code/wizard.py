@@ -14,7 +14,7 @@ class WizardModeTarget:
     	return self.config["enable_events"].items()[0][0]
 
     def complete_event_name(self):
-        if self.type_name == "shot":
+        if self.type_name == "shots":
             return self.name + "_wizard_active_hit"
         else:
             return self.name + "_wizard_hit_complete"
@@ -55,6 +55,7 @@ class Wizard(Mode):
         self.machine.events.add_handler(target.complete_event_name(), self.target_hit)
 
         self.log.info("Enabling Wizard Mode Target: " + str(self.current_target))
+        self.log.info("Sending Event: " + self.current_target.enable_event_name())
         self.machine.events.post(self.current_target.enable_event_name())
 
     def disable_current_target(self):
