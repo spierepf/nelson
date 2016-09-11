@@ -6,7 +6,7 @@ mode:
 
 ball_saves:
   default:
-    active_time: 10s
+    active_time: 1s
     enable_events: balldevice_plungerLane_ball_eject_success
     balls_to_save: 1
     debug: yes
@@ -14,7 +14,7 @@ ball_saves:
 
 timers:
   ball_save:
-    start_value: 19
+    start_value: 1
     end_value: 0
     direction: down
     tick_interval: 0.5s
@@ -95,6 +95,12 @@ slide_player:
       v_pos: bottom
       h_pos: right
       font: small
+  jackpot_hit:
+    - type: text
+      text: "JACKPOT!"
+      font: weltron
+      size: 25
+      expire: 3s
 
 sound_player:
     outlane:
@@ -130,4 +136,5 @@ logic_blocks:
         carousel_modes_completed:
             count_events: carousel_mode_complete
             count_complete_value: 6
+            event_when_hit: enable_jackpot
             events_when_complete: yer_a_wizard_harry

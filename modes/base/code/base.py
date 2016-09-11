@@ -38,7 +38,6 @@ class Base(Mode):
         self.machine.events.remove_handler_by_event('player_base_ball_save_tick', self.tick)
 
     def tick(self, **kwargs):
-        self.log.info("TICK")
         for i in range(len(self.leds)):
             if i < kwargs['value']:
                 self.leds[i].color([255, 0, 0])

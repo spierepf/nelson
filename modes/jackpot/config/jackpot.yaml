@@ -1,0 +1,43 @@
+# config_version=3
+
+mode:
+  start_events: enable_jackpot
+  stop_events: jackpot_hit, timer_shot_timer_complete
+  priority: 100
+  code: jackpot.Jackpot
+
+shot_profiles:
+  jackpot:
+    states:
+      - name: active
+      - name: hit
+
+shots:
+  kickout_right:
+    profile: jackpot
+    tags: jackpot_shot
+    enable_events: enable_jackpot_mode_shot_a
+    disable_events: disable_jackpot_mode_shot_a
+    reset_events: disable_jackpot_mode_shot_a
+
+light_player:
+  enable_jackpot_mode_shot_a:
+    - show: right_kickout_arrow_chase_rainbow
+      repeat: yes
+  disable_jackpot_mode_shot_a:
+    - show: right_kickout_arrow_chase_rainbow
+      action: stop
+
+timers:
+  shot_timer:
+    start_running: true
+    end_value: 20
+    control_events:
+      - event: jackpot_hit
+        action: stop
+
+  mode_cooldown:
+    end_value: 4
+    control_events:
+      - event: jackpot_hit
+        action: start
