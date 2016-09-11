@@ -6,9 +6,8 @@ mode:
 
 ball_saves:
   default:
-    active_time: 1s
-    enable_events: mode_base_started
-    timer_start_events: balldevice_plungerLane_ball_eject_success
+    active_time: 10s
+    enable_events: balldevice_plungerLane_ball_eject_success
     balls_to_save: 1
     debug: yes
     auto_launch: no
@@ -20,7 +19,7 @@ timers:
     direction: down
     tick_interval: 0.5s
     control_events:
-      - event: balldevice_plungerLane_ball_eject_success
+      - event: ball_save_default_enabled
         action: start
 
 scoring:
