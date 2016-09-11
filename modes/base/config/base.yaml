@@ -2,6 +2,7 @@
 mode:
     start_events: ball_starting
     priority: 100
+    code: base.Base
 
 ball_saves:
   default:
@@ -11,6 +12,16 @@ ball_saves:
     balls_to_save: 1
     debug: yes
     auto_launch: no
+
+timers:
+  ball_save:
+    start_value: 19
+    end_value: 0
+    direction: down
+    tick_interval: 0.5s
+    control_events:
+      - event: balldevice_plungerLane_ball_eject_success
+        action: start
 
 scoring:
     ball_started:

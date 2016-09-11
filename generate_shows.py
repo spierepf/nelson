@@ -373,6 +373,8 @@ RainbowChase(Leds("opponent_bid")).write()
 RainbowChase(Leds("xp_bar")).write()
 RainbowChase(Leds("ball_save")).write()
 
+Chase(Leds("ball_save"), "red", [RED] + 18*[BLACK]).write()
+
 for leds in ["gaming_mode", "vendor_mode", "auction_mode", "photo_mode", "cosplay_mode", "stargazer_mode"]:
     for color in ["red", "orange", "yellow", "green", "blue", "magenta"]:
         ColorWave(Leds(leds), color).write()

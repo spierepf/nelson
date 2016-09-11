@@ -249,3 +249,12 @@ leds:
     l_ball_save_j: { number: 393 }
     l_ball_save_k: { number: 394 }
     l_ball_save_l: { number: 395 }
+    
+    l_ball_save_m: { number: 400 }
+    l_ball_save_n: { number: 401 }
+    l_ball_save_o: { number: 402 }
+    l_ball_save_p: { number: 397 }
+    l_ball_save_q: { number: 398 }
+    l_ball_save_r: { number: 399 }
+
+    l_ball_save_s: { number: 396 }
