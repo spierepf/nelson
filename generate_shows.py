@@ -71,6 +71,22 @@ BLUE      = (0, 0, 255);
 with open('config/lights.yaml', 'r') as f:
     LEDS = yaml.load(f)["leds"]
 
+COLORS = {
+    "white": WHITE,
+    "light_gray": LIGHTGRAY,
+    "gray": GRAY,
+    "dark_gray": DARKGRAY,
+    "black": BLACK,
+    "red": RED,
+    "pink": PINK,
+    "orange": ORANGE,
+    "yellow": YELLOW,
+    "green": GREEN,
+    "magenta": MAGENTA,
+    "cyan": CYAN,
+    "blue": BLUE
+}
+
 def find_leds(prefix):
     leds = []
     for key in sorted(LEDS):
@@ -355,3 +371,8 @@ RainbowChase(Leds("main_stage_edge")).write()
 RainbowChase(Leds("player_bid")).write()
 RainbowChase(Leds("opponent_bid")).write()
 RainbowChase(Leds("xp_bar")).write()
+RainbowChase(Leds("ball_save")).write()
+
+for leds in ["gaming_mode", "vendor_mode", "auction_mode", "photo_mode", "cosplay_mode", "stargazer_mode"]:
+    for color in ["red", "orange", "yellow", "green", "blue", "magenta"]:
+        ColorWave(Leds(leds), color).write()

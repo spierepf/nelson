@@ -45,4 +45,18 @@ light_player:
         repeat: yes
       - show: xp_bar_chase_rainbow
         repeat: yes
+      - show: gaming_mode_wave_red
+        repeat: yes
+      - show: vendor_mode_wave_orange
+        repeat: yes
+      - show: auction_mode_wave_yellow
+        repeat: yes
+      - show: photo_mode_wave_green
+        repeat: yes
+      - show: cosplay_mode_wave_blue
+        repeat: yes
+      - show: stargazer_mode_wave_magenta
+        repeat: yes
+      - show: ball_save_chase_rainbow
+        repeat: yes
 

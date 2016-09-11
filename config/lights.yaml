@@ -181,29 +181,29 @@ leds:
     l_right_kickout_arrow_g: { number: 84 }
     l_right_kickout_arrow_h: { number: 83 }
     
-    l_gaming_mode_a: { number: 511 }
-    l_gaming_mode_b: { number: 511 }
-    l_gaming_mode_c: { number: 511 }
+    l_gaming_mode_a: { number: 472 }
+    l_gaming_mode_b: { number: 473 }
+    l_gaming_mode_c: { number: 474 }
     
-    l_vendor_mode_a: { number: 511 }
-    l_vendor_mode_b: { number: 511 }
-    l_vendor_mode_c: { number: 511 }
+    l_vendor_mode_a: { number: 487 }
+    l_vendor_mode_b: { number: 488 }
+    l_vendor_mode_c: { number: 489 }
     
-    l_auction_mode_a: { number: 511 }
-    l_auction_mode_b: { number: 511 }
-    l_auction_mode_c: { number: 511 }
+    l_auction_mode_a: { number: 484 }
+    l_auction_mode_b: { number: 485 }
+    l_auction_mode_c: { number: 486 }
     
-    l_photo_mode_a: { number: 511 }
-    l_photo_mode_b: { number: 511 }
-    l_photo_mode_c: { number: 511 }
+    l_photo_mode_a: { number: 481 }
+    l_photo_mode_b: { number: 482 }
+    l_photo_mode_c: { number: 483 }
     
-    l_cosplay_mode_a: { number: 511 }
-    l_cosplay_mode_b: { number: 511 }
-    l_cosplay_mode_c: { number: 511 }
+    l_cosplay_mode_a: { number: 478 }
+    l_cosplay_mode_b: { number: 479 }
+    l_cosplay_mode_c: { number: 480 }
     
-    l_stargazer_mode_a: { number: 511 }
-    l_stargazer_mode_b: { number: 511 }
-    l_stargazer_mode_c: { number: 511 }
+    l_stargazer_mode_a: { number: 475 }
+    l_stargazer_mode_b: { number: 476 }
+    l_stargazer_mode_c: { number: 477 }
     
     l_extra_ball_a: { number: 511 }
     l_extra_ball_b: { number: 511 }
@@ -237,15 +237,15 @@ leds:
     l_right_inlane: { number: 511 }
     l_right_outlane: { number: 511 }
     
-    l_ball_save_a: { number: 511 }
-    l_ball_save_b: { number: 511 }
-    l_ball_save_c: { number: 511 }
-    l_ball_save_d: { number: 511 }
-    l_ball_save_e: { number: 511 }
-    l_ball_save_f: { number: 511 }
-    l_ball_save_g: { number: 511 }
-    l_ball_save_h: { number: 511 }
-    l_ball_save_i: { number: 511 }
-    l_ball_save_j: { number: 511 }
-    l_ball_save_k: { number: 511 }
-    l_ball_save_l: { number: 511 }
+    l_ball_save_a: { number: 384 }
+    l_ball_save_b: { number: 385 }
+    l_ball_save_c: { number: 386 }
+    l_ball_save_d: { number: 387 }
+    l_ball_save_e: { number: 388 }
+    l_ball_save_f: { number: 389 }
+    l_ball_save_g: { number: 390 }
+    l_ball_save_h: { number: 391 }
+    l_ball_save_i: { number: 392 }
+    l_ball_save_j: { number: 393 }
+    l_ball_save_k: { number: 394 }
+    l_ball_save_l: { number: 395 }
